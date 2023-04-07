@@ -1,0 +1,57 @@
+html {
+  box-sizing: border-box;
+  font-family: var(--ff-primary);
+  font-size: 62.5%;
+  font-weight: var(--fw-regular);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+* {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  color: var(--c-body);
+  font-size: 1.6rem;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+html,
+body {
+  // Prevent chrome elastic scrolling bug
+  overscroll-behavior-y: none;
+}
+

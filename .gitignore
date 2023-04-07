@@ -1,0 +1,17 @@
+# dependencies
+node_modules/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Env files
+.env.local
+
+# next.js
+.next/
+next.config.json
+
+# misc
+.DS_Store
+Thumbs.db

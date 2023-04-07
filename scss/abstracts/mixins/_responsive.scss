@@ -1,0 +1,38 @@
+@mixin mq-min($width, $print: true) {
+  $print-str: if($print, 'print, ', '');
+
+  @media #{$print-str}screen and (min-width: $width) {
+    @content;
+  }
+}
+
+@mixin mq-max($width, $print: true) {
+  $width: $width - 0.0625em; // Remove 1px
+  $print-str: if($print, 'print, ', '');
+
+  @media #{$print-str}screen and (max-width: $width) {
+    @content;
+  }
+}
+
+@mixin mq-max-or-selector($width, $selector, $print: true) {
+  $width: $width - 0.0625em; // Remove 1px
+  $print-str: if($print, 'print, ', '');
+
+  @media #{$print-str}screen and (max-width: $width) {
+    @content;
+  }
+
+  #{$selector} {
+    @content;
+  }
+}
+
+@mixin mq-min-max($min, $max, $print: true) {
+  $max: $max - 0.0625em; // Remove 1px
+  $print-str: if($print, 'print, ', '');
+
+  @media #{$print-str}screen and (min-width: $min) and (max-width: $max) {
+    @content;
+  }
+}

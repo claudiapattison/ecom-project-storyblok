@@ -1,0 +1,16 @@
+@use '/scss/abstracts/mixins/responsive' as responsive;
+@use '/scss/abstracts/variables/variables' as variables;
+
+.wrapper,
+.wrapper--small {
+  margin-top: var(--s-wrapper);
+  margin-bottom: var(--s-wrapper);
+}
+
+
+@include responsive.mq-max(variables.$mq-md) {
+  .wrapper {
+    margin-top: var(--s-wrapper-md);
+    margin-bottom: var(--s-wrapper-md);
+  }
+}

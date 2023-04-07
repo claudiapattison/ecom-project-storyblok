@@ -1,0 +1,21 @@
+:root {
+  --c-white: hsl(0deg 0% 100%);
+  --c-black: hsl(221deg 100% 4%);
+  --c-border: hsl(223deg 4% 34%);
+
+  // Fonts
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+
+  // Sizing
+  --s-container: 1244px;
+  --s-wrapper: 6rem;
+  --s-column-gap: 3rem;
+  --s-wrapper-md: 8.4rem;
+  --s-wrapper-lg: 10.8rem;
+
+  // Transitions
+  --t-speed: 0.3s;
+  --t-delay: 0.3s;
+}

@@ -1,0 +1,12 @@
+@use '/scss/abstracts/mixins/responsive' as responsive;
+@use '/scss/abstracts/mixins/responsive' as variables;
+
+.container {
+  width: 100%;
+  max-width: var(--s-container);
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 1.6rem;
+  padding-left: 1.6rem;
+}
+
