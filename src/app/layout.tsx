@@ -1,4 +1,11 @@
-import './globals.css'
+import { Manrope } from 'next/font/google';
+import { Footer } from './components/Footer/Footer'
+
+const manrope = Manrope({
+  subsets: ['latin'],
+  variable: '--ff-primary',
+  display: 'swap',
+})
 
 export const metadata = {
   title: 'Create Next App',
@@ -11,8 +18,11 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body>{children}</body>
+    <html lang="en" className={`${manrope.variable}`}>
+      <body>
+        {children}
+        <Footer text='Audiophile is an all in one stop to fulfill your audio needs. We are a small team of music lovers and sound specialists who are devoted to helping you get the most out of personal audio. Come and visit our demo facility - we’re open 7 days a week.'  />
+      </body>
     </html>
   )
 }

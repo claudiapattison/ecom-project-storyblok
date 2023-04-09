@@ -1,11 +1,29 @@
 @use '/scss/abstracts/abstracts' as a;
 
+body {
+  font-family: var(--font-primary);
+  font-size: 1.5rem;
+  font-weight: var(--fw-medium);
+  line-height: 2.5rem;
+}
+
 h1,
 h2,
 h3,
 h4,
 h5 {
   margin-bottom: 1rem;
-  color: var(--c-secondary);
-  font-weight: var(--fw-semibold);
+  color: var(--c-black);
+  font-weight: var(--fw-bold);
+  text-transform: uppercase;
+}
+
+h1 {
+  font-size: 5.6rem;
+  letter-spacing: 0.2rem;
+  line-height: 2rem;
+}
+
+strong {
+  font-weight: var(--fw-bold);
 }

@@ -1,0 +1,144 @@
+@use '/scss/abstracts/mixins/responsive' as responsive;
+@use '/scss/abstracts/variables/variables' as variables;
+
+.footer {
+  padding-bottom: 3.8rem;
+  background-color: var(--c-black-100);
+  color: var(--c-white);
+}
+
+.container {
+  &::before {
+    content: '';
+    display: block;
+    width: 10.1rem;
+    height: 0.4rem;
+    margin: 0 auto;
+    background-color: var(--c-primary);
+  }
+}
+
+.grid {
+  display: grid;
+  padding-top: 4.8rem;
+  gap: 4.8rem;
+}
+
+.column {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.text {
+  opacity: 0.5;
+}
+
+.link {
+  transition: color var(--t-speed);
+  color: var(--c-white);
+  text-decoration: none;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.3rem;
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  gap: 1.6rem;
+}
+
+.social-list {
+  display: flex;
+  gap: 1.6rem;
+}
+
+.icon {
+  display: block;
+  width: 2.4rem;
+  height: 2.4rem;
+  transition: color var(--t-speed);
+  fill: var(--c-white);
+}
+
+@include responsive.mq-min(variables.$mq-md) {
+  .footer {
+    padding-bottom: 4.6rem;
+  }
+
+  .container {
+    &::before {
+      margin: 0;
+    }
+  }
+
+  .grid {
+    grid-auto-rows: 1fr; 
+    grid-template-columns: 1fr 1fr; 
+    grid-template-rows: min-content min-content min-content min-content; 
+    padding-top: 5.6rem;
+    gap: 3.2rem;
+  }
+
+  .column {
+    grid-column: span 2;
+    justify-content: left;
+    text-align: left;
+
+    &:last-of-type, &:nth-last-of-type(-n+2) {
+      grid-column: span 1;
+      margin-top: 4.8rem;
+    }
+  }
+
+  .list {
+    flex-direction: row;
+    gap: 3.4rem;
+  }
+
+  .social-list {
+    margin-left: auto;
+  }
+}
+
+@include responsive.mq-min(variables.$mq-xl) {
+  .footer {
+    padding-bottom: 4.8rem;
+  }
+
+  .grid {
+    grid-template-rows: min-content min-content min-content;
+    grid-template-rows: rtl; /* Set to rtl */
+    padding-top: 7.1rem;
+    gap: 3.6rem;
+  }
+
+  .column {
+    grid-column: span 1;
+
+    &:nth-last-child(2) {
+      order: 10;
+      margin-top: 2rem;
+    }
+  }
+
+  .list {
+    margin-left: auto;
+  }
+
+  .social-list {
+    margin-top: auto;
+  }
+}
+
+@media (hover: hover) {
+  .link:hover {
+    color: var(--c-primary);
+  }
+
+  .icon:hover {
+    fill: var(--c-primary);
+  }
+}

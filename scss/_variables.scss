@@ -1,15 +1,20 @@
 :root {
+  --c-primary: hsl(22deg 65% 57%);
+  --c-primary-100: hsl(21deg 94% 75%);
   --c-white: hsl(0deg 0% 100%);
-  --c-black: hsl(221deg 100% 4%);
-  --c-border: hsl(223deg 4% 34%);
+  --c-white-100: hsl(0deg 0% 98%);
+  --c-black: hsl(0deg 0% 0%);
+  --c-black-100: hsl(0deg 0% 6%);
+  --c-grey: hsl(0deg 0% 95%);
 
   // Fonts
   --fw-regular: 400;
   --fw-medium: 500;
   --fw-semibold: 600;
+  --fw-bold: 700;
 
   // Sizing
-  --s-container: 1244px;
+  --s-container: 1180px;
   --s-wrapper: 6rem;
   --s-column-gap: 3rem;
   --s-wrapper-md: 8.4rem;

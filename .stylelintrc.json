@@ -1,0 +1,21 @@
+{
+  "extends": [
+    "stylelint-config-standard-scss",
+    "stylelint-config-property-sort-order-smacss"
+  ],
+  "rules": {
+    "alpha-value-notation": "number",
+    "keyframes-name-pattern": "^[a-z][a-zA-Z0-9]+$", 
+    "selector-class-pattern":
+    "^[a-z]([a-z0-9-]+)?(__([a-z0-9]+-?)+)?(--([a-z0-9]+-?)+){0,2}$",
+    "selector-pseudo-class-no-unknown": [
+      true,
+      { "ignorePseudoClasses": ["global"] }
+    ],
+    "string-quotes": "single",
+    "scss/at-rule-conditional-no-parentheses": null,
+    "scss/dollar-variable-empty-line-before": null
+  }
+}
+
+

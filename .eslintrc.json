@@ -1,0 +1,93 @@
+{
+  "env": {
+      "browser": true,
+      "es2021": true
+  },
+  "extends": [
+      "airbnb",
+      "airbnb-typescript",
+      "airbnb/hooks",
+      "plugin:react/recommended",
+      "standard-with-typescript",
+      "plugin:storybook/recommended"
+  ],
+  "parserOptions": {
+      "ecmaVersion": "latest",
+      "sourceType": "module",
+      "project": ["./tsconfig.json"]
+  },
+  "plugins": [
+      "react"
+  ],
+  "overrides": [
+    {
+        "files": ["*.stories.@(ts|tsx|js|jsx|mjs|cjs)"],
+        "rules": {
+            "storybook/hierarchy-separator": "error",
+            "storybook/default-exports": "off",
+            "import/no-extraneous-dependencies": "off",
+            "react/jsx-props-no-spreading": "off",
+            "@typescript-eslint/consistent-type-assertions": "off"
+        }
+    }
+] ,
+  "rules": {
+    "@typescript-eslint/no-explicit-any": ["error"],
+    "@typescript-eslint/strict-boolean-expressions": 0,
+    "@typescript-eslint/member-delimiter-style": [
+      "warn",
+      {
+          "multiline": {
+              "delimiter": "semi",
+              "requireLast": true
+          },
+          "singleline": {
+              "delimiter": "semi",
+              "requireLast": false
+          }
+      }
+   ],
+    "react/jsx-filename-extension": [1, { "extensions": [".tsx", ".ts"] }],
+    "import/no-unresolved": [
+      "error",
+      {
+        "ignore": ["['~/']"]
+      }
+    ],
+    "import/extensions": "off",
+    "import/prefer-default-export": "off",
+    "react/function-component-definition": [
+      2,
+      {
+        "namedComponents": "arrow-function",
+        "unnamedComponents": "arrow-function"
+      }
+    ],
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": [
+          "**/*.stories.*",
+          "**/.storybook/**/*.*"
+        ]
+      }
+    ],
+    "react/require-default-props": "off",
+    "react/button-has-type": "off",
+    "jsx-a11y/label-has-associated-control": [
+      "error",
+      {
+        "controlComponents": ["Field"],
+        "assert": "both"
+      }
+    ],
+    "react/react-in-jsx-scope": "off",
+    "linebreak-style": "off",
+    "no-plusplus": [
+      "error",
+      {
+        "allowForLoopAfterthoughts": true
+      }
+    ]
+  }
+}
