@@ -8,7 +8,7 @@ export interface ImageProps {
   src: string;
   width?: number;
   height?: number;
-  alt: string;
+  alt?: string;
   fill?: boolean;
   sizes?: string;
   quality?: number;
