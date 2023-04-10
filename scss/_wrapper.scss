@@ -8,7 +8,7 @@
 }
 
 
-@include responsive.mq-max(variables.$mq-md) {
+@include responsive.mq-min(variables.$mq-md) {
   .wrapper {
     margin-top: var(--s-wrapper-md);
     margin-bottom: var(--s-wrapper-md);

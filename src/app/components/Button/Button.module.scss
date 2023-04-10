@@ -1,11 +1,17 @@
 .button {
   display: inline-block;
-  padding: 1rem;
+  padding: 1.5rem 3rem;
+  transition: background-color var(--t-speed);
   border: 0;
   background-color: var(--c-button-bg);
   color: var(--c-white);
+  font-size: 1.3rem;
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.1rem;
+  line-height: 1.8rem;
   text-align: center;
   text-decoration: none;
+  text-transform: uppercase;
   cursor: pointer;
   user-select: none;
 

@@ -26,12 +26,11 @@ export const Hero: FC<HeroProps> = ({
           <Button variant='primary' link='/'>See Product</Button>
         </div>
         <div className={styles['image-container']}>
-        <Image
-          src='/placeholder/hero.jpg'
-          alt="Logo"
-          fill
-          className={styles.image}
-          />
+        <picture>
+          <source media="(min-width: 1024px)" srcSet="/placeholder/hero-desktop.jpg" />
+          <source media="(max-width: 1024px)" srcSet="/placeholder/hero.jpg" />
+          <Image src="/cutups/hero.jpg" fill priority alt="Image" className={styles.image} />
+        </picture>
         </div>
       </div>
     </div>
