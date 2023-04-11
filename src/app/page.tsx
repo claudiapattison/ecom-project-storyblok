@@ -23,6 +23,7 @@ export default function Home() {
             title: "Headphones",
             image: {
               src: "/placeholder/image-category-thumbnail-headphones.png",
+              alt: "Headphones",
             },
             link: "/",
           },
@@ -31,6 +32,7 @@ export default function Home() {
             title: "Speakers",
             image: {
               src: "/placeholder/image-category-thumbnail-speakers.png",
+              alt: "Speakers",
             },
             link: "/",
           },
@@ -39,6 +41,7 @@ export default function Home() {
             title: "Earphones",
             image: {
               src: "/placeholder/image-category-thumbnail-earphones.png",
+              alt: "Earphones",
             },
             link: "/",
           },
