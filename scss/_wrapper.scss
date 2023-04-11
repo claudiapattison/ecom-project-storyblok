@@ -8,9 +8,10 @@
 }
 
 
-@include responsive.mq-min(variables.$mq-md) {
+@include responsive.mq-min(variables.$mq-xl) {
   .wrapper {
-    margin-top: var(--s-wrapper-md);
-    margin-bottom: var(--s-wrapper-md);
+    margin-top: var(--s-wrapper-xl);
+    margin-bottom: var(--s-wrapper-xl);
   }
 }
+

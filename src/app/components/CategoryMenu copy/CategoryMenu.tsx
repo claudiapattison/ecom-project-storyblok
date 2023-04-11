@@ -4,7 +4,6 @@ import Image from "next/image";
 import { type ImageProps, LinkProps } from "../../../../interfaces/common";
 import Link from "next/link";
 import { Icon } from "@/app/components/Icon/Icon";
-
 interface CategoryMenuProps {
   list: CategoryItem[];
 }
@@ -18,7 +17,7 @@ interface CategoryItem {
 
 export const CategoryMenu: FC<CategoryMenuProps> = ({ list }) => {
   return (
-    <div className={styles.container}>
+    <div className={`wrapper ${styles.container}`}>
       <div className="container">
         <ul className={styles.list}>
           {list.map((item) => (

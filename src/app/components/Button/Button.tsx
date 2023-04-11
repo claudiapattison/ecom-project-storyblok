@@ -1,6 +1,6 @@
-import { type FC } from 'react'
-import Link from 'next/link'
-import styles from './Button.module.scss'
+import { type FC } from "react";
+import Link from "next/link";
+import styles from "./Button.module.scss";
 
 interface ButtonProps {
   variant?: ButtonVariant;
@@ -12,39 +12,37 @@ interface ButtonProps {
   ariaLabel?: string;
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
 }
-type ButtonType = 'button' | 'submit' | 'reset' | undefined
+type ButtonType = "button" | "submit" | "reset" | undefined;
 
-type ButtonVariant = 'primary' | 'secondary'
+type ButtonVariant = "primary" | "secondary";
 
 export const Button: FC<ButtonProps> = ({
-  variant = 'primary',
+  variant = "primary",
   link,
   linkTarget,
   children,
-  type = 'button',
+  type = "button",
   disabled,
   ariaLabel,
-  onClick
+  onClick,
 }) => {
   const theme = `
   ${styles.button}
-  ${variant !== undefined ? styles[variant] : ''}`
+  ${variant !== undefined ? styles[variant] : ""}`;
 
-  return link !== undefined
-    ? (
-      <Link href={link} target={linkTarget ?? ''} className={theme}>
-        {children}
-      </Link>
-      )
-    : (
-      <button
-        type={type}
-        className={theme}
-        disabled={disabled}
-        onClick={onClick}
-        aria-label={ariaLabel}
-      >
-        {children}
-      </button>
-      )
-}
+  return link !== undefined ? (
+    <Link href={link} target={linkTarget ?? ""} className={theme}>
+      {children}
+    </Link>
+  ) : (
+    <button
+      type={type}
+      className={theme}
+      disabled={disabled}
+      onClick={onClick}
+      aria-label={ariaLabel}
+    >
+      {children}
+    </button>
+  );
+};

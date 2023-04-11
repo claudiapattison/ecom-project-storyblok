@@ -1,0 +1,67 @@
+@use '/scss/abstracts/mixins/responsive' as responsive;
+@use '/scss/abstracts/variables/variables' as variables;
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  gap: 3.6rem;
+  justify-content: center;
+}
+
+.image-container {
+  position: relative;
+  min-height: 30rem;
+}
+
+.image {
+  border-radius: 0.8rem;
+  object-fit: cover;
+  object-position: center;
+}
+
+.content {
+  text-align: center;
+}
+
+.title {
+  margin-bottom: 3.6rem;
+}
+
+.text {
+  color: var(--c-black-200);
+}
+
+@include responsive.mq-min(variables.$mq-md) {
+  .grid {
+    gap: 6.3rem;
+  }
+
+  .title {
+    margin-bottom: 3.2rem;
+  }
+
+  .content {
+    max-width: 57rem;
+    margin: 0 auto;
+  }
+}
+
+@include responsive.mq-min(variables.$mq-xl) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    align-items: center;
+  }
+
+  .image-container {
+    aspect-ratio: 1/1;
+    order: 1;
+  }
+
+  .content {
+    max-width: 44rem;
+    margin: 0;
+    text-align: left;
+  }
+}
