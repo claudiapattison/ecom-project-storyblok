@@ -16,21 +16,19 @@ export const ContentTextMedia: FC<ContentTextMediaProps> = ({
 }) => {
   console.log(image);
   return (
-    <div className={`wrapper ${styles.container}`}>
-      <div className="container">
-        <div className={styles.grid}>
-          <div className={styles["image-container"]}>
-            <Image
-              src={image.src}
-              alt={image.alt}
-              fill
-              className={styles.image}
-            />
-          </div>
-          <div className={styles.content}>
-            <h2 className={styles.title}>{title}</h2>
-            <p className={styles.text}>{text}</p>
-          </div>
+    <div className={`wrapper`}>
+      <div className={styles.grid}>
+        <div className={styles["image-container"]}>
+          <Image
+            src={image.src}
+            alt={image.alt}
+            fill
+            className={styles.image}
+          />
+        </div>
+        <div className={styles.content}>
+          <h2 className={styles.title}>{title}</h2>
+          <p className={styles.text}>{text}</p>
         </div>
       </div>
     </div>
