@@ -1,11 +1,42 @@
-import {CogIcon, PackageIcon} from '@sanity/icons'
+import {CogIcon} from '@sanity/icons'
 import {defineType, defineField} from 'sanity'
 
-const TITLE = 'Settings'
+export const footer = defineType({
+  name: 'footer',
+  type: 'object',
+  fields: [
+    {
+      name: 'text',
+      title: 'Text',
+      type: 'text',
+      rows: 3,
+    },
+    {
+      name: 'copyright',
+      title: 'Copyright',
+      type: 'text',
+      rows: 1,
+    },
+  ],
+})
 
-export default defineType({
+export const social = defineType({
+    name: 'social',
+    title: 'social',
+    type: 'object',
+    fields: [
+      {
+        name: 'facebook',
+        title: 'Facebook',
+        type: 'string',
+      },
+    ],
+  })
+  
+
+export const settings =  defineType({
   name: 'settings',
-  title: TITLE,
+  title: 'Settings',
   type: 'document',
   icon: CogIcon,
   groups: [
@@ -15,61 +46,28 @@ export default defineType({
       title: 'Footer',
     },
     {
-        name: 'socialContent',
-        title: 'Social',
+      name: 'socialContent',
+      title: 'Social',
     },
   ],
   fields: [
     defineField({
       name: 'footer',
       title: 'Footer',
-      type: 'object',
+      type: 'footer',
       group: 'footerContent',
-      fields: [
-        {
-            name: 'text',
-            title: 'Text',
-            type: 'text',
-            rows: 3,
-        },
-        {
-            name: 'copyright',
-            title: 'Copyright',
-            type: 'text',
-            rows: 1,
-        },
-   
-      ],
     }),
     defineField({
-        name: 'social',
-        title: 'Social',
-        type: 'object',
-        group: 'socialContent',
-        fields: [
-          {
-            title: 'Facebook',
-            name: 'facebook',
-            type: 'string'
-          },
-          {
-            title: 'Twitter',
-            name: 'twitter',
-            type: 'string'
-          },
-          {
-            title: 'Instagram',
-            name: 'instagram',
-            type: 'string'
-          },
-     
-        ],
-      }),
+      name: 'social',
+      title: 'Social',
+      type: 'social',
+      group: 'socialContent',
+    }),
   ],
   preview: {
     prepare() {
       return {
-        title: TITLE,
+        title: 'Settings',
       }
     },
   },

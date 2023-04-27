@@ -1,12 +1,11 @@
-import {LinkIcon} from '@sanity/icons'
+import {EarthGlobeIcon} from '@sanity/icons'
 import {defineField} from 'sanity'
-import {PAGE_REFERENCES} from '../../constants'
 
 export default defineField({
-  title: 'Internal Link',
+  title: 'External Link',
   name: 'linkInternal',
   type: 'object',
-  icon: LinkIcon,
+  icon: EarthGlobeIcon,
   fields: [
     // Title
     {
@@ -15,38 +14,32 @@ export default defineField({
       type: 'string',
       validation: (Rule) => Rule.required(),
     },
-    // Reference
+    // URL
     {
-      name: 'reference',
-      type: 'reference',
-      weak: true,
-      validation: (Rule) => Rule.required(),
-      to: PAGE_REFERENCES,
+      name: 'url',
+      title: 'URL',
+      type: 'url',
+      validation: (Rule) => Rule.required().uri({scheme: ['http', 'https']}),
+    },
+    // Open in a new window
+    {
+      title: 'Open in a new window?',
+      name: 'newWindow',
+      type: 'boolean',
+      initialValue: true,
     },
   ],
   preview: {
     select: {
-      reference: 'reference',
-      referenceProductTitle: 'reference.store.title',
-      referenceProductPriceRange: 'reference.store.priceRange',
-      referenceTitle: 'reference.title',
-      referenceType: 'reference._type',
       title: 'title',
+      url: 'url',
     },
     prepare(selection) {
-      const {
-        reference,
-        referenceProductTitle,
-        referenceTitle,
-        referenceType,
-        title,
-      } = selection
+      const {title, url} = selection
 
       let subtitle = []
-      if (reference) {
-        subtitle.push([`→ ${referenceTitle || referenceProductTitle || reference?._id}`])
-      } else {
-        subtitle.push('(Nonexistent document reference)')
+      if (url) {
+        subtitle.push(`→ ${url}`)
       }
 
       return {
