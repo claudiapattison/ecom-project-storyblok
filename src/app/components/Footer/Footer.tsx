@@ -6,11 +6,18 @@ import Link from "next/link";
 
 interface FooterProps {
   text: string;
+  copyright: string;
+  social: socialProps;
 }
 
-export const Footer: FC<FooterProps> = ({ text }) => {
-  const currentYear = new Date().getFullYear();
+interface socialProps {
+  facebook: string;
+  twitter: string;
+  instagram: string;
+}
 
+export const Footer: FC<FooterProps> = ({ text, copyright, social }) => {
+  const currentYear = new Date().getFullYear();
   return (
     <footer className={styles.footer}>
       <div className={`container ${styles.container}`}>
@@ -49,27 +56,42 @@ export const Footer: FC<FooterProps> = ({ text }) => {
           </div>
           <div className={styles.column}>
             <p className={styles.text}>
-              <strong>Copyright {currentYear}. All Rights Reserved</strong>
+              <strong>
+                Copyright {currentYear}. {copyright}
+              </strong>
             </p>
           </div>
           <div className={styles.column}>
             <ul className={styles["social-list"]}>
               <li>
-                <Link href="/">
+                <a
+                  href={social.facebook}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="facebook"
+                >
                   <Icon name="#facebook" className={styles.icon} />
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="/">
-                  {" "}
+                <a
+                  href={social.twitter}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="twitter"
+                >
                   <Icon name="#twitter" className={styles.icon} />
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="/">
-                  {" "}
+                <a
+                  href={social.instagram}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="instagram"
+                >
                   <Icon name="#instagram" className={styles.icon} />
-                </Link>
+                </a>
               </li>
             </ul>
           </div>

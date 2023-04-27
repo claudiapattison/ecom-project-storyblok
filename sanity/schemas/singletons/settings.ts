@@ -6,7 +6,7 @@ export const footer = defineType({
   type: 'object',
   fields: [
     {
-      name: 'text',
+      name: 'footerText',
       title: 'Text',
       type: 'text',
       rows: 3,
@@ -28,6 +28,16 @@ export const social = defineType({
       {
         name: 'facebook',
         title: 'Facebook',
+        type: 'string',
+      },
+      {
+        name: 'twitter',
+        title: 'Twitter',
+        type: 'string',
+      },
+      {
+        name: 'instagram',
+        title: 'Instagram',
         type: 'string',
       },
     ],

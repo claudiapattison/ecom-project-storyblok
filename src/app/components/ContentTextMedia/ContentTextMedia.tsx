@@ -14,7 +14,6 @@ export const ContentTextMedia: FC<ContentTextMediaProps> = ({
   text,
   image,
 }) => {
-  console.log(image);
   return (
     <div className={`wrapper`}>
       <div className={styles.grid}>

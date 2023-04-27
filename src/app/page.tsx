@@ -9,7 +9,7 @@ import "../../scss/styles.scss";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Home() {
+export default async function Home() {
   return (
     <main className={styles.main}>
       <Hero
