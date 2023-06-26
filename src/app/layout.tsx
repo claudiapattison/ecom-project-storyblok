@@ -1,11 +1,22 @@
 import { storyblokInit, apiPlugin } from '@storyblok/react/rsc'
 import { Manrope } from 'next/font/google'
+import StoryblokBridgeLoader from '@storyblok/react/bridge-loader'
 import StoryblokProvider from '../components/StoryblokProvider'
-import { Footer } from './components/Footer/Footer'
+
+import Page from '@/components/Page'
+import Grid from '@/components/Grid'
+import Feature from '@/components/Feature'
+import Teaser from '@/components/Teaser'
 
 storyblokInit({
   accessToken: 'HAhQiRUwaIYEaJfUHWncWgtt',
-  use: [apiPlugin]
+  use: [apiPlugin],
+  components: {
+    feature: Feature,
+    grid: Grid,
+    page: Page,
+    teaser: Teaser
+  }
 })
 
 const manrope = Manrope({
@@ -28,10 +39,9 @@ export default async function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <StoryblokProvider>
-      <html lang="en" className={`${manrope.variable}`}>
-        <body>{children}</body>
-      </html>
-    </StoryblokProvider>
+    <html lang="en" className={`${manrope.variable}`}>
+      <body>{children}</body>
+      <StoryblokBridgeLoader options={{}} />
+    </html>
   )
 }

@@ -15,4 +15,7 @@ yarn dev
 pnpm dev
 ```
 
+## Set up Visual Editor
+
+https://www.storyblok.com/faq/setup-dev-server-https-proxy
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
