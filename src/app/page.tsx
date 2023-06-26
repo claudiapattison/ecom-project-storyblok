@@ -1,5 +1,6 @@
 import { Inter } from 'next/font/google'
-import { getStoryblokApi, StoryblokComponent } from '@storyblok/react/rsc'
+import { getStoryblokApi } from '@storyblok/react/rsc'
+import StoryblokStory from '@storyblok/react/story'
 import styles from './page.module.css'
 import { Hero } from './components/Hero/Hero'
 import { CategoryMenu } from './components/CategoryMenu/CategoryMenu'
@@ -12,11 +13,11 @@ const inter = Inter({ subsets: ['latin'] })
 
 export default async function Home() {
   const { data } = await fetchData()
-  console.log(data.story.content)
+
   return (
     <main className={styles.main}>
       Story: {data.story.name}
-      <StoryblokComponent blok={data.story.content} />
+      <StoryblokStory story={data.story} />
       <Hero
         label="NEW PRODUCT"
         title="XX99 Mark II Headphones"
