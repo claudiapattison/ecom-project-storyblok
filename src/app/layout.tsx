@@ -1,5 +1,12 @@
+import { storyblokInit, apiPlugin } from '@storyblok/react/rsc'
 import { Manrope } from 'next/font/google'
+import StoryblokProvider from '../components/StoryblokProvider'
 import { Footer } from './components/Footer/Footer'
+
+storyblokInit({
+  accessToken: 'HAhQiRUwaIYEaJfUHWncWgtt',
+  use: [apiPlugin]
+})
 
 const manrope = Manrope({
   subsets: ['latin'],
@@ -21,8 +28,10 @@ export default async function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${manrope.variable}`}>
-      <body>{children}</body>
-    </html>
+    <StoryblokProvider>
+      <html lang="en" className={`${manrope.variable}`}>
+        <body>{children}</body>
+      </html>
+    </StoryblokProvider>
   )
 }

@@ -1,13 +1,13 @@
-import { Inter } from "next/font/google";
-import styles from "./page.module.css";
-import { Hero } from "./components/Hero/Hero";
-import { CategoryMenu } from "./components/CategoryMenu/CategoryMenu";
-import { ContentTextMedia } from "./components/ContentTextMedia/ContentTextMedia";
-import { CallToAction } from "./components/CallToAction/CallToAction";
+import { Inter } from 'next/font/google'
+import styles from './page.module.css'
+import { Hero } from './components/Hero/Hero'
+import { CategoryMenu } from './components/CategoryMenu/CategoryMenu'
+import { ContentTextMedia } from './components/ContentTextMedia/ContentTextMedia'
+import { CallToAction } from './components/CallToAction/CallToAction'
 
-import "../../scss/styles.scss";
+import '../../scss/styles.scss'
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ['latin'] })
 
 export default async function Home() {
   return (
@@ -22,31 +22,31 @@ export default async function Home() {
           list={[
             {
               id: 1,
-              title: "Headphones",
+              title: 'Headphones',
               image: {
-                src: "/placeholder/image-category-thumbnail-headphones.png",
-                alt: "Headphones",
+                src: '/placeholder/image-category-thumbnail-headphones.png',
+                alt: 'Headphones'
               },
-              link: "/",
+              link: '/'
             },
             {
               id: 2,
-              title: "Speakers",
+              title: 'Speakers',
               image: {
-                src: "/placeholder/image-category-thumbnail-speakers.png",
-                alt: "Speakers",
+                src: '/placeholder/image-category-thumbnail-speakers.png',
+                alt: 'Speakers'
               },
-              link: "/",
+              link: '/'
             },
             {
               id: 3,
-              title: "Earphones",
+              title: 'Earphones',
               image: {
-                src: "/placeholder/image-category-thumbnail-earphones.png",
-                alt: "Earphones",
+                src: '/placeholder/image-category-thumbnail-earphones.png',
+                alt: 'Earphones'
               },
-              link: "/",
-            },
+              link: '/'
+            }
           ]}
         />
         <CallToAction
@@ -55,8 +55,8 @@ export default async function Home() {
           link="/"
           large
           image={{
-            src: "/placeholder/cta1.jpg",
-            alt: "image",
+            src: '/placeholder/cta1.jpg',
+            alt: 'image'
           }}
           feature
         />
@@ -64,8 +64,8 @@ export default async function Home() {
           title="ZX7 SPEAKER"
           link="/"
           image={{
-            src: "/placeholder/cta2.jpg",
-            alt: "image",
+            src: '/placeholder/cta2.jpg',
+            alt: 'image'
           }}
         />
         <CallToAction
@@ -74,19 +74,19 @@ export default async function Home() {
           spilt
           large
           image={{
-            src: "/placeholder/cta3.jpg",
-            alt: "image",
+            src: '/placeholder/cta3.jpg',
+            alt: 'image'
           }}
         />
         <ContentTextMedia
           title="Bringing you the best audio gear"
           text="Located at the heart of New York City, Audiophile is the premier store for high end headphones, earphones, speakers, and audio accessories. We have a large showroom and luxury demonstration rooms available for you to browse and experience a wide range of our products. Stop by our store to meet some of the fantastic people who make Audiophile the best place to buy your portable audio equipment."
           image={{
-            src: "/placeholder/image-best-gear.jpg",
-            alt: "image",
+            src: '/placeholder/image-best-gear.jpg',
+            alt: 'image'
           }}
         />
       </div>
     </main>
-  );
+  )
 }
