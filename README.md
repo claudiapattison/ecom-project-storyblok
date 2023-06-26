@@ -1,9 +1,5 @@
 ## Ecom Project
 
-Ecom project to learn new features of Next.js 13.
-
-Plan at a later date is to add a headless CMS Santity into project and Shopify.
-
 Design: https://www.frontendmentor.io/challenges/audiophile-ecommerce-website-C8cuSd_wx
 
 Link: https://ecom-project-dusky.vercel.app/
