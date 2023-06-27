@@ -2,10 +2,6 @@ import { Inter } from 'next/font/google'
 import { getStoryblokApi } from '@storyblok/react/rsc'
 import StoryblokStory from '@storyblok/react/story'
 import styles from './page.module.css'
-import { Hero } from './components/Hero/Hero'
-import { CategoryMenu } from './components/CategoryMenu/CategoryMenu'
-import { ContentTextMedia } from './components/ContentTextMedia/ContentTextMedia'
-import { CallToAction } from './components/CallToAction/CallToAction'
 
 import '../../scss/styles.scss'
 
