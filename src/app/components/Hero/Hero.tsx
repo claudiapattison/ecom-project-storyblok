@@ -27,7 +27,7 @@ const Hero: FC<{ blok: HeroProps }> = ({ blok }) => (
             {blok.text}
           </p>
           <Button variant="primary" link="/">
-            <span {...storyblokEditable(blok)}>{blok.link.slug}</span>
+            BUtton
           </Button>
         </div>
         <div className={styles['image-container']}>

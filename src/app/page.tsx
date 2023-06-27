@@ -1,4 +1,3 @@
-import { Inter } from 'next/font/google'
 import {
   getStoryblokApi,
   type StoryblokClient,
@@ -8,8 +7,6 @@ import StoryblokStory from '@storyblok/react/story'
 import styles from './page.module.css'
 
 import '../../scss/styles.scss'
-
-const inter = Inter({ subsets: ['latin'] })
 
 export default async function Home(): Promise<JSX.Element> {
   const { data } = await fetchData()
@@ -21,10 +18,10 @@ export default async function Home(): Promise<JSX.Element> {
   )
 }
 
-export async function fetchData() {
+// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
+async function fetchData() {
   const sbParams: ISbStoriesParams = { version: 'draft' }
 
   const storyblokApi: StoryblokClient = getStoryblokApi()
-  console.log(storyblokApi)
   return storyblokApi.get('cdn/stories/home', sbParams)
 }

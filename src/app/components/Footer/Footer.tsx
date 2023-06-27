@@ -1,23 +1,23 @@
-import { type FC } from "react";
-import styles from "./Footer.module.scss";
-import Image from "next/image";
-import { Icon } from "@/app/components/Icon/Icon";
-import Link from "next/link";
+import { type FC } from 'react'
+import Image from 'next/image'
+import Link from 'next/link'
+import styles from './Footer.module.scss'
+import { Icon } from '@/app/components/Icon/Icon'
 
 interface FooterProps {
-  text: string;
-  copyright: string;
-  social: socialProps;
+  text: string
+  copyright: string
+  social: socialProps
 }
 
 interface socialProps {
-  facebook: string;
-  twitter: string;
-  instagram: string;
+  facebook: string
+  twitter: string
+  instagram: string
 }
 
 export const Footer: FC<FooterProps> = ({ text, copyright, social }) => {
-  const currentYear = new Date().getFullYear();
+  const currentYear = new Date().getFullYear()
   return (
     <footer className={styles.footer}>
       <div className={`container ${styles.container}`}>
@@ -62,7 +62,7 @@ export const Footer: FC<FooterProps> = ({ text, copyright, social }) => {
             </p>
           </div>
           <div className={styles.column}>
-            <ul className={styles["social-list"]}>
+            <ul className={styles['social-list']}>
               <li>
                 <a
                   href={social.facebook}
@@ -98,5 +98,5 @@ export const Footer: FC<FooterProps> = ({ text, copyright, social }) => {
         </div>
       </div>
     </footer>
-  );
-};
+  )
+}
