@@ -16,13 +16,7 @@ export default async function Home() {
 
   return (
     <main className={styles.main}>
-      Story: {data.story.name}
       <StoryblokStory story={data.story} />
-      <Hero
-        label="NEW PRODUCT"
-        title="XX99 Mark II Headphones"
-        text="Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast."
-      />
       <div className="container">
         <CategoryMenu
           list={[

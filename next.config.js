@@ -5,6 +5,9 @@ const nextConfig = {
   experimental: {
     appDir: true,
   },
+  images: {
+    domains: ['a.storyblok.com'],
+  },
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/,

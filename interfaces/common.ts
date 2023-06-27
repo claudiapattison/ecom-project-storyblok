@@ -3,7 +3,7 @@ export interface LinkProps {
   url: string;
   target?: string;
 }
-  
+
 export interface ImageProps {
   src: string;
   width?: number;
@@ -15,4 +15,8 @@ export interface ImageProps {
   priority?: boolean;
   className?: string;
 }
-  
+
+export interface ImageStoryBlokProps {
+  filename: string;
+  alt: string;
+}

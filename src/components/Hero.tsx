@@ -1,17 +1,10 @@
-import { type FC } from 'react'
-import Image from 'next/image'
 import { type SbBlokData, storyblokEditable } from '@storyblok/react'
-import styles from './Hero.module.scss'
-import { Button } from '@/app/components/Button/Button'
-import { type ImageStoryBlokProps } from '../../../../interfaces/common'
+import { type FC } from 'react'
 
 export interface HeroProps extends SbBlokData {
   label: string
   title: string
   text: string
-  link: string
-  image: ImageStoryBlokProps
-  imageMobile: ImageStoryBlokProps
 }
 
 const Hero: FC<{ blok: HeroProps }> = ({ blok }) => (
@@ -19,15 +12,11 @@ const Hero: FC<{ blok: HeroProps }> = ({ blok }) => (
     <div className="container">
       <div className={styles.grid}>
         <div className={styles.content}>
-          <span {...storyblokEditable(blok)} className={styles.label}>
-            {blok.label}
-          </span>
+          <span className={styles.label}>{label}</span>
           <h1 {...storyblokEditable(blok)}>{blok.title}</h1>
-          <p {...storyblokEditable(blok)} className={styles.text}>
-            {blok.text}
-          </p>
+          <p className={styles.text}>{text}</p>
           <Button variant="primary" link="/">
-            <span {...storyblokEditable(blok)}>{blok.link.slug}</span>
+            See Product
           </Button>
         </div>
         <div className={styles['image-container']}>
@@ -38,13 +27,13 @@ const Hero: FC<{ blok: HeroProps }> = ({ blok }) => (
             />
             <source
               media="(max-width: 1024px)"
-              srcSet={blok.imageMobile.filename}
+              srcSet="/placeholder/hero.jpg"
             />
             <Image
-              src={blok.image.filename}
+              src="/cutups/hero.jpg"
               fill
               priority
-              alt={blok.image.alt}
+              alt="Image"
               className={styles.image}
             />
           </picture>
