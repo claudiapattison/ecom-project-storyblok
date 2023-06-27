@@ -17,6 +17,7 @@ export default async function Home() {
   return (
     <main className={styles.main}>
       <StoryblokStory story={data.story} />
+      {/*
       <div className="container">
         <CategoryMenu
           list={[
@@ -86,7 +87,7 @@ export default async function Home() {
             alt: 'image'
           }}
         />
-      </div>
+      </div> */}
     </main>
   )
 }

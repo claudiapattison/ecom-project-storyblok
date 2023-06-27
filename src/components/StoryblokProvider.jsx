@@ -8,6 +8,7 @@ import Page from './page';
 import Feature from './Feature'
 import Teaser from './Teaser'
 import Hero from '../app/components/Hero/Hero';
+import { ContentTextMedia } from '../app/components/ContentTextMedia/ContentTextMedia';
 
 /** 3. Initialize it as usual */
 storyblokInit({
@@ -18,7 +19,8 @@ storyblokInit({
     page: Page,
     grid: Grid,
     feature: Feature,
-    hero: Hero
+    hero: Hero,
+    contentTextMedia: ContentTextMedia,
   },
 })
 

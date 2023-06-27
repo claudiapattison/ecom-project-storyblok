@@ -1,27 +1,37 @@
 import { type FC } from 'react'
 import Image from 'next/image'
+import { type SbBlokData, storyblokEditable } from '@storyblok/react'
 import styles from './ContentTextMedia.module.scss'
-import { type ImageProps } from '../../../../interfaces/common'
+import { type ImageStoryBlokProps } from '../../../../interfaces/common'
 
-interface ContentTextMediaProps {
+interface ContentTextMediaProps extends SbBlokData {
   title: string
   text: string
-  image: ImageProps
+  image: ImageStoryBlokProps
 }
 
-export const ContentTextMedia: FC<ContentTextMediaProps> = ({
-  title,
-  text,
-  image
+export const ContentTextMedia: FC<{ blok: ContentTextMediaProps }> = ({
+  blok
 }) => (
   <div className="wrapper">
-    <div className={styles.grid}>
-      <div className={styles['image-container']}>
-        <Image src={image.src} alt={image.alt} fill className={styles.image} />
-      </div>
-      <div className={styles.content}>
-        <h2 className={styles.title}>{title}</h2>
-        <p className={styles.text}>{text}</p>
+    <div className="container">
+      <div className={styles.grid}>
+        <div className={styles['image-container']}>
+          <Image
+            src={blok.image.filename}
+            alt={blok.image.alt}
+            fill
+            className={styles.image}
+          />
+        </div>
+        <div className={styles.content}>
+          <h2 {...storyblokEditable(blok)} className={styles.title}>
+            {blok.title}
+          </h2>
+          <p {...storyblokEditable(blok)} className={styles.text}>
+            {blok.text}
+          </p>
+        </div>
       </div>
     </div>
   </div>
