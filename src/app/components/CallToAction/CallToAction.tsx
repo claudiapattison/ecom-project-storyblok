@@ -5,6 +5,7 @@ import styles from './CallToAction.module.scss'
 import { type ImageProps, LinkProps } from '../../../../interfaces/common'
 import { Button } from '@/app/components/Button/Button'
 import { Icon } from '@/app/components/Icon/Icon'
+import { type SbBlokData, storyblokEditable } from '@storyblok/react'
 
 interface CallToActionProps {
   title: string

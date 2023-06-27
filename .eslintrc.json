@@ -4,18 +4,16 @@
     "es2021": true
   },
   "extends": [
-    "airbnb",
-    "airbnb-typescript",
-    "airbnb/hooks",
-    "plugin:react/recommended",
-    "standard-with-typescript"
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier"
   ],
+  "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaVersion": "latest",
-    "sourceType": "module",
-    "project": ["./tsconfig.json"]
+    "sourceType": "module"
   },
-  "plugins": ["react"],
+  "plugins": ["@typescript-eslint"],
   "overrides": [
     {
       "files": ["*.stories.@(ts|tsx|js|jsx|mjs|cjs)"],
@@ -31,19 +29,7 @@
   "rules": {
     "@typescript-eslint/no-explicit-any": ["error"],
     "@typescript-eslint/strict-boolean-expressions": 0,
-    "@typescript-eslint/member-delimiter-style": [
-      "warn",
-      {
-        "multiline": {
-          "delimiter": "semi",
-          "requireLast": true
-        },
-        "singleline": {
-          "delimiter": "semi",
-          "requireLast": false
-        }
-      }
-    ],
+
     "react/jsx-filename-extension": [1, { "extensions": [".tsx", ".ts"] }],
     "import/no-unresolved": [
       "error",
