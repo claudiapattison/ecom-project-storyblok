@@ -1,44 +1,47 @@
 import { type FC } from 'react'
+import { type SbBlokData, storyblokEditable } from '@storyblok/react'
 import Image from 'next/image'
 import Link from 'next/link'
 import styles from './CallToAction.module.scss'
-import { type ImageProps } from '../../../../interfaces/common'
 import { Button } from '@/app/components/Button/Button'
+import { type ImageStoryBlokProps } from '../../../../interfaces/common'
 
-interface CallToActionProps {
+interface CallToActionProps extends SbBlokData {
   title: string
   text?: string
   link: string
-  large?: boolean
   spilt?: boolean
-  image?: ImageProps
+  image?: ImageStoryBlokProps
   feature?: boolean
 }
 
-export const CallToAction: FC<CallToActionProps> = ({
-  title,
-  text,
-  link,
-  large,
-  spilt,
-  feature,
-  image
-}) => (
+export const CallToAction: FC<{ blok: CallToActionProps }> = ({ blok }) => (
   <Link
-    href={link}
+    href="/"
     className={`${styles.container} ${
-      feature ? styles['container--feature'] : ''
-    } ${spilt ? styles['container--spilt'] : ''}`}
+      blok.feature ? styles['container--feature'] : ''
+    } ${blok.spilt ? styles['container--spilt'] : ''}`}
   >
-    {image != null && (
+    {blok.image != null && (
       <div className={styles['image-container']}>
-        <Image src={image.src} alt={image.alt} fill className={styles.image} />
+        <Image
+          src={blok.image.filename}
+          alt={blok.image.alt}
+          fill
+          className={styles.image}
+        />
       </div>
     )}
 
     <div className={styles.content}>
-      <h2 className={styles.title}>{title}</h2>
-      {text != null && <p className={styles.text}>{text}</p>}
+      <h2 {...storyblokEditable(blok)} className={styles.title}>
+        {blok.title}
+      </h2>
+      {blok.text != null && (
+        <p {...storyblokEditable(blok)} className={styles.text}>
+          {blok.text}
+        </p>
+      )}
       <Button variant="secondary">See Product</Button>
     </div>
   </Link>

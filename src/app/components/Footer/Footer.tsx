@@ -6,17 +6,17 @@ import { Icon } from '@/app/components/Icon/Icon'
 
 interface FooterProps {
   text: string
-  copyright: string
-  social: socialProps
-}
-
-interface socialProps {
   facebook: string
   twitter: string
   instagram: string
 }
 
-export const Footer: FC<FooterProps> = ({ text, copyright, social }) => {
+export const Footer: FC<FooterProps> = ({
+  text,
+  facebook,
+  twitter,
+  instagram
+}) => {
   const currentYear = new Date().getFullYear()
   return (
     <footer className={styles.footer}>
@@ -56,16 +56,14 @@ export const Footer: FC<FooterProps> = ({ text, copyright, social }) => {
           </div>
           <div className={styles.column}>
             <p className={styles.text}>
-              <strong>
-                Copyright {currentYear}. {copyright}
-              </strong>
+              <strong>Copyright {currentYear}. All Rights Reserved</strong>
             </p>
           </div>
           <div className={styles.column}>
             <ul className={styles['social-list']}>
               <li>
                 <a
-                  href={social.facebook}
+                  href={facebook}
                   target="_blank"
                   rel="noreferrer"
                   aria-label="facebook"
@@ -75,7 +73,7 @@ export const Footer: FC<FooterProps> = ({ text, copyright, social }) => {
               </li>
               <li>
                 <a
-                  href={social.twitter}
+                  href={twitter}
                   target="_blank"
                   rel="noreferrer"
                   aria-label="twitter"
@@ -85,7 +83,7 @@ export const Footer: FC<FooterProps> = ({ text, copyright, social }) => {
               </li>
               <li>
                 <a
-                  href={social.instagram}
+                  href={instagram}
                   target="_blank"
                   rel="noreferrer"
                   aria-label="instagram"

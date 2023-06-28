@@ -2,17 +2,14 @@
 
 Design: https://www.frontendmentor.io/challenges/audiophile-ecommerce-website-C8cuSd_wx
 
-Link: https://ecom-project-dusky.vercel.app/
+Link: https://ecom-project-storyblok.vercel.app/
 
 ## Run Project
 First, run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+
 ```
 
 ## Set up Visual Editor

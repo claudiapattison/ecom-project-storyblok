@@ -1,6 +1,12 @@
 import { storyblokInit, apiPlugin } from '@storyblok/react/rsc'
 import { Manrope } from 'next/font/google'
+import {
+  getStoryblokApi,
+  type StoryblokClient,
+  type ISbStoriesParams
+} from '@storyblok/react/rsc'
 import StoryblokProvider from '../components/StoryblokProvider'
+import { Footer } from './components/Footer/Footer'
 
 storyblokInit({
   accessToken: 'HAhQiRUwaIYEaJfUHWncWgtt',
@@ -27,11 +33,28 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+  const { data } = await fetchData()
   return (
     <StoryblokProvider>
       <html lang="en" className={`${manrope.variable}`}>
-        <body>{children}</body>
+        <body>
+          {children}
+          <Footer
+            text={data.story.content.footerText}
+            facebook={data.story.content.facebook}
+            twitter={data.story.content.twitter}
+            instagram={data.story.content.instagram}
+          />
+        </body>
       </html>
     </StoryblokProvider>
   )
+}
+
+// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
+async function fetchData() {
+  const sbParams: ISbStoriesParams = { version: 'draft' }
+
+  const storyblokApi: StoryblokClient = getStoryblokApi()
+  return storyblokApi.get('cdn/stories/global', sbParams)
 }
