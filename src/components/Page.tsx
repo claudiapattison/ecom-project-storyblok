@@ -7,7 +7,7 @@ export interface IPageComponent extends SbBlokData {
 
 const Page: FunctionComponent<{ blok: IPageComponent }> = ({ blok }) => (
   <div>
-    {blok.body.map((nestedBlok) => (
+    {blok.body?.map((nestedBlok) => (
       <StoryblokComponent
         blok={nestedBlok}
         // eslint-disable-next-line no-underscore-dangle

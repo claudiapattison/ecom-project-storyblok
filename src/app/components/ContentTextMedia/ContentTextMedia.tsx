@@ -21,6 +21,7 @@ export const ContentTextMedia: FC<{ blok: ContentTextMediaProps }> = ({
             src={blok.image.filename}
             alt={blok.image.alt}
             fill
+            sizes="(max-width: 1200px) 100vw"
             className={styles.image}
           />
         </div>

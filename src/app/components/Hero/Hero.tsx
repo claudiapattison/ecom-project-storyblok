@@ -30,25 +30,24 @@ const Hero: FC<{ blok: HeroProps }> = ({ blok }) => (
             BUtton
           </Button>
         </div>
-        <div className={styles['image-container']}>
-          <picture>
-            <source
-              media="(min-width: 1024px)"
-              srcSet="/placeholder/hero-desktop.jpg"
-            />
-            <source
-              media="(max-width: 1024px)"
-              srcSet={blok.imageMobile.filename}
-            />
-            <Image
-              src={blok.image.filename}
-              fill
-              priority
-              alt={blok.image.alt}
-              className={styles.image}
-            />
-          </picture>
-        </div>
+        <picture className={styles['image-container']}>
+          <source
+            media="(min-width: 1024px)"
+            srcSet="/placeholder/hero-desktop.jpg"
+          />
+          <source
+            media="(max-width: 1024px)"
+            srcSet={blok.imageMobile.filename}
+          />
+          <Image
+            src={blok.image.filename}
+            fill
+            priority
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw"
+            alt={blok.image.alt}
+            className={styles.image}
+          />
+        </picture>
       </div>
     </div>
   </div>

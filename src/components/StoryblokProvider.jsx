@@ -9,7 +9,6 @@ import { ContentTextMedia } from '../app/components/ContentTextMedia/ContentText
 import { CallToAction } from '@/app/components/CallToAction/CallToAction';
 import { CallToActionGrid } from '@/app/components/CallToActionGrid/CallToActionGrid';
 import { CategoryMenu } from '@/app/components/CategoryMenu/CategoryMenu';
-import { CategoryItem } from '@/app/components/CategoryItem/CategoryItem';
 
 /** 3. Initialize it as usual */
 storyblokInit({
@@ -17,12 +16,12 @@ storyblokInit({
   use: [apiPlugin],
   components: {
     page: Page,
+    category: Page,
     hero: Hero,
     contentTextMedia: ContentTextMedia,
     callToAction: CallToAction,
     gridCallToAction: CallToActionGrid,
-    gridCategoryMenu: CategoryMenu,
-    category: CategoryItem
+    gridCategoryMenu: CategoryMenu  
   },
 })
 

@@ -28,6 +28,7 @@ export const CallToAction: FC<{ blok: CallToActionProps }> = ({ blok }) => (
           src={blok.image.filename}
           alt={blok.image.alt}
           fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw"
           className={styles.image}
         />
       </div>

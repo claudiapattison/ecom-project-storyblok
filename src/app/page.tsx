@@ -1,14 +1,11 @@
 import { getStoryblokApi, type StoryblokClient } from '@storyblok/react/rsc'
 import StoryblokStory from '@storyblok/react/story'
-import styles from './page.module.css'
-
-import '../../scss/styles.scss'
 
 export default async function Home(): Promise<JSX.Element> {
   const { data } = await fetchData()
 
   return (
-    <main className={styles.main}>
+    <main>
       <StoryblokStory story={data.story} />
     </main>
   )

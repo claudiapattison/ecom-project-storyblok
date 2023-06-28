@@ -7,6 +7,7 @@ import {
 } from '@storyblok/react/rsc'
 import StoryblokProvider from '../components/StoryblokProvider'
 import { Footer } from './components/Footer/Footer'
+import '../../scss/styles.scss'
 
 storyblokInit({
   accessToken: 'HAhQiRUwaIYEaJfUHWncWgtt',

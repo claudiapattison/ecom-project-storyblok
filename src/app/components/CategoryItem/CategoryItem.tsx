@@ -5,7 +5,7 @@ import styles from './CategoryItem.module.scss'
 import { type ImageStoryBlokProps } from '../../../../interfaces/common'
 import { Icon } from '@/app/components/Icon/Icon'
 
-interface CategoryItemProps {
+export interface CategoryItemProps {
   title: string
   link: string
   image: ImageStoryBlokProps
