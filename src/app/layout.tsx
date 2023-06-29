@@ -1,11 +1,8 @@
 import { storyblokInit, apiPlugin } from '@storyblok/react/rsc'
 import { Manrope } from 'next/font/google'
-import {
-  getStoryblokApi,
-  type StoryblokClient,
-  type ISbStoriesParams
-} from '@storyblok/react/rsc'
+import { getStoryblokApi, type StoryblokClient } from '@storyblok/react/rsc'
 import StoryblokProvider from '../components/StoryblokProvider'
+import { Header } from './components/Header/Header'
 import { Footer } from './components/Footer/Footer'
 import '../../scss/styles.scss'
 
@@ -39,6 +36,7 @@ export default async function RootLayout({
     <StoryblokProvider>
       <html lang="en" className={`${manrope.variable}`}>
         <body>
+          <Header navigation={data.story.content.navigation} />
           {children}
           <Footer
             text={data.story.content.footerText}
@@ -54,8 +52,12 @@ export default async function RootLayout({
 
 // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
 async function fetchData() {
-  const sbParams: ISbStoriesParams = { version: 'draft' }
-
   const storyblokApi: StoryblokClient = getStoryblokApi()
-  return storyblokApi.get('cdn/stories/global', sbParams)
+
+  const response = await storyblokApi.get('cdn/stories/global', {
+    version: 'draft',
+    resolve_relations: 'global.navigation'
+  })
+
+  return response
 }

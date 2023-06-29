@@ -1,0 +1,53 @@
+@use '/scss/abstracts/mixins/responsive' as responsive;
+@use '/scss/abstracts/variables/variables' as variables;
+
+.header {
+  // todo - animation on scroll
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  width: 100%;
+  background-color: var(--c-black);
+}
+
+.list {
+  // todo - create mobile menu
+  display: none;
+}
+
+.grid {
+  display: flex;
+  justify-content: center;
+  padding-top: 3.2rem;
+  padding-bottom: 3.2rem;
+  border-bottom: 0.1rem solid var(--c-black-300);
+}
+
+.nav-column {
+  justify-self: center;
+}
+
+.link {
+  color: var(--c-white);
+  font-size: 1.3rem;
+  font-weight: var(--fw-bold) ;
+  letter-spacing: 0.2rem;
+  line-height: 2.5rem;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+@include responsive.mq-min(variables.$mq-lg) {
+  .list {
+    display: block;
+    display: flex;
+    gap: 3.4rem;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 3rem;
+    justify-content: flex-start;
+  }
+}
