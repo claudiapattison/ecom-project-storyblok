@@ -2,7 +2,7 @@ import { type FC } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import styles from './Footer.module.scss'
-import { Icon } from '@/app/components/Icon/Icon'
+import { Icon } from '@/app/_components/Icon/Icon'
 
 interface FooterProps {
   text: string

@@ -4,11 +4,11 @@ import { storyblokInit, apiPlugin } from '@storyblok/react/rsc'
 
 /** 2. Import your components */
 import Page from './Page';
-import Hero from '../app/components/Hero/Hero';
-import { ContentTextMedia } from '../app/components/ContentTextMedia/ContentTextMedia';
-import { CallToAction } from '@/app/components/CallToAction/CallToAction';
-import { CallToActionGrid } from '@/app/components/CallToActionGrid/CallToActionGrid';
-import { CategoryMenu } from '@/app/components/CategoryMenu/CategoryMenu';
+import Hero from '../app/_components/Hero/Hero';
+import { ContentTextMedia } from '../app/_components/ContentTextMedia/ContentTextMedia';
+import { CallToAction } from '@/app/_components/CallToAction/CallToAction';
+import { CallToActionGrid } from '@/app/_components/CallToActionGrid/CallToActionGrid';
+import { CategoryMenu } from '@/app/_components/CategoryMenu/CategoryMenu';
 
 /** 3. Initialize it as usual */
 storyblokInit({

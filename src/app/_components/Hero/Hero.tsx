@@ -2,7 +2,7 @@ import { type FC } from 'react'
 import Image from 'next/image'
 import { type SbBlokData, storyblokEditable } from '@storyblok/react'
 import styles from './Hero.module.scss'
-import { Button } from '@/app/components/Button/Button'
+import { Button } from '@/app/_components/Button/Button'
 import { type ImageStoryBlokProps } from '../../../../interfaces/common'
 
 export interface HeroProps extends SbBlokData {

@@ -2,8 +2,8 @@ import { storyblokInit, apiPlugin } from '@storyblok/react/rsc'
 import { Manrope } from 'next/font/google'
 import { getStoryblokApi, type StoryblokClient } from '@storyblok/react/rsc'
 import StoryblokProvider from '../components/StoryblokProvider'
-import { Header } from './components/Header/Header'
-import { Footer } from './components/Footer/Footer'
+import { Header } from './_components/Header/Header'
+import { Footer } from './_components/Footer/Footer'
 import '../../scss/styles.scss'
 
 storyblokInit({

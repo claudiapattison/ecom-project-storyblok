@@ -25,6 +25,11 @@ export const Header: FC<HeaderProps> = ({ navigation }) => (
         <div className={styles['nav-column']}>
           <nav>
             <ul className={styles.list}>
+              <li>
+                <Link className={styles.link} href="/">
+                  HOME
+                </Link>
+              </li>
               {navigation?.map((item) => (
                 <li key={item.id}>
                   <Link className={styles.link} href={item.slug}>

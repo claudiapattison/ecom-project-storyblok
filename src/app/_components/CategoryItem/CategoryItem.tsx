@@ -3,7 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import styles from './CategoryItem.module.scss'
 import { type ImageStoryBlokProps } from '../../../../interfaces/common'
-import { Icon } from '@/app/components/Icon/Icon'
+import { Icon } from '@/app/_components/Icon/Icon'
 
 export interface CategoryItemProps {
   title: string

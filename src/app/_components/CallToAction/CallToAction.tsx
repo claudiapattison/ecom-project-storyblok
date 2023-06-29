@@ -3,7 +3,7 @@ import { type SbBlokData, storyblokEditable } from '@storyblok/react'
 import Image from 'next/image'
 import Link from 'next/link'
 import styles from './CallToAction.module.scss'
-import { Button } from '@/app/components/Button/Button'
+import { Button } from '@/app/_components/Button/Button'
 import { type ImageStoryBlokProps } from '../../../../interfaces/common'
 
 interface CallToActionProps extends SbBlokData {
