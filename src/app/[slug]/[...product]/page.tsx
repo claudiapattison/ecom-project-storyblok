@@ -1,13 +1,19 @@
 import { getStoryblokApi, type StoryblokClient } from '@storyblok/react/rsc'
 import StoryblokStory from '@storyblok/react/story'
-import { HeroPage } from '../_components/HeroPage/HeroPage'
 
 export default async function ProductPage(context: {
   params: { slug: string }
 }): Promise<JSX.Element> {
   return (
     <main>
-      <h1>test</h1>
+      <h1>Produt</h1>
+      <h1>Produt</h1>
+
+      <h1>Produt</h1>
+
+      <h1>Produt</h1>
+
+      <h1>Produt</h1>
     </main>
   )
 }

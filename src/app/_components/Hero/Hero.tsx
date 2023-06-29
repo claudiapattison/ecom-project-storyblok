@@ -32,10 +32,6 @@ const Hero: FC<{ blok: HeroProps }> = ({ blok }) => (
         </div>
         <picture className={styles['image-container']}>
           <source
-            media="(min-width: 1024px)"
-            srcSet="/placeholder/hero-desktop.jpg"
-          />
-          <source
             media="(max-width: 1024px)"
             srcSet={blok.imageMobile.filename}
           />

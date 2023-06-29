@@ -1,3 +1,6 @@
+@use '/scss/abstracts/mixins/responsive' as responsive;
+@use '/scss/abstracts/variables/variables' as variables;
+
 html {
   box-sizing: border-box;
   font-family: var(--ff-primary);
@@ -55,3 +58,8 @@ body {
   overscroll-behavior-y: none;
 }
 
+@include responsive.mq-max(variables.$mq-md) {
+  body {
+    padding-top: 9rem;
+  }
+}
