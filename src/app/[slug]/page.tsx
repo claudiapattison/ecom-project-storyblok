@@ -1,16 +1,17 @@
 import { getStoryblokApi, type StoryblokClient } from '@storyblok/react/rsc'
 import StoryblokStory from '@storyblok/react/story'
 import { HeroPage } from '../_components/HeroPage/HeroPage'
+import { ProductListing } from '../_components/ProductListing/ProductListing'
 
 export default async function CategoryPage(context: {
   params: { slug: string }
 }): Promise<JSX.Element> {
-  const { data } = await fetchData(context)
-
+  const { data, products } = await fetchData(context)
   return (
     <main>
-      <HeroPage title={data.story.content.title} />
-      {data.story !== null && <StoryblokStory story={data.story} />}
+      <HeroPage title={data.data.story.content.title} />
+      <ProductListing products={products} />
+      {data.story !== null && <StoryblokStory story={data.data.story} />}
     </main>
   )
 }
@@ -21,10 +22,15 @@ async function fetchData(context: { params: { slug: string } }) {
 
   const storyblokApi: StoryblokClient = getStoryblokApi()
 
-  const response = await storyblokApi.get(`cdn/stories/${slug}`, {
+  const data = await storyblokApi.get(`cdn/stories/${slug}`, {
     version: 'draft',
     resolve_relations: 'gridCategoryMenu.items'
   })
 
-  return response
+  const products = await storyblokApi.getAll(`cdn/stories`, {
+    version: 'draft',
+    starts_with: `${slug}/product/`
+  })
+
+  return { data, products }
 }
