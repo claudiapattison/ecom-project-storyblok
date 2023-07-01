@@ -28,10 +28,6 @@
   margin-bottom: 3.6rem;
 }
 
-.text {
-  color: var(--c-black-200);
-}
-
 @include responsive.mq-min(variables.$mq-md) {
   .grid {
     gap: 6.3rem;

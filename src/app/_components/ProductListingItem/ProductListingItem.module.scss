@@ -1,0 +1,93 @@
+@use '/scss/abstracts/mixins/responsive' as responsive;
+@use '/scss/abstracts/variables/variables' as variables;
+
+.container {
+  margin-top: 6.4rem;
+  margin-bottom: 12rem;
+}
+
+.grid {
+  display: grid;
+  gap: 3.2rem;
+  text-align: center;
+}
+
+.image-container {
+  border-radius: 0.8rem;
+  aspect-ratio: 327/352;
+  background-color: var(--c-grey);
+}
+
+.image {
+  width: 100%;
+  max-width: 25rem;
+  height: 100%;
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+.label {
+  display: block;
+  margin-bottom: 2.4rem;
+  color: var(--c-primary);
+  font-size: 1.4rem;
+  letter-spacing: 1rem;
+  line-height: 1.9rem;
+}
+
+.button {
+  margin-top: 2.4rem;
+}
+
+@include responsive.mq-min(variables.$mq-md) {
+  .container {
+    margin-top: 12rem;
+  }
+
+  .grid {
+    gap: 5.2rem;
+  }
+
+  .image-container {
+    aspect-ratio: 689/352;
+  }
+
+  .title {
+    max-width: 15ch;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .description {
+    max-width: 57rem;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+@include responsive.mq-min(variables.$mq-lg) {
+  .container {
+    margin-top: 16rem;
+    margin-bottom: 16rem;
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    text-align: left;
+    gap: 12.5rem;
+  }
+
+  .image-container {
+    aspect-ratio: 1/1;
+  }
+
+  .image {
+    max-width: 37rem;
+  }
+
+  .title {
+    margin-left: 0;
+  }
+}

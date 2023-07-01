@@ -1,6 +1,7 @@
 import { type FC } from 'react'
 import Image from 'next/image'
 import { type ImageStoryBlokProps } from '../../../../interfaces/common'
+import { ProductListingItem } from '../ProductListingItem/ProductListingItem'
 
 export interface ProductListingProps {
   products: ProductListingItemProps[]
@@ -21,14 +22,12 @@ export const ProductListing: FC<ProductListingProps> = ({ products }) => (
     <div className="container">
       {products?.map((product) => (
         <div key={product.id}>
-          <h3>{product.content.title}</h3>
-          <p>{product.content.description}</p>
-          <span>{product.full_slug}</span>
-          <Image
-            src={product.content.image.filename}
-            alt={product.content.image.alt}
-            width={438}
-            height={408}
+          <ProductListingItem
+            label={product.content.label}
+            title={product.content.title}
+            description={product.content.description}
+            link={product.full_slug}
+            image={product.content.image}
           />
         </div>
       ))}
