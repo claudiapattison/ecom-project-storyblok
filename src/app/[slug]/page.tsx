@@ -8,7 +8,6 @@ export default async function CategoryPage(context: {
 }): Promise<JSX.Element> {
   const { data, products } = await fetchData(context)
 
-  console.log(products)
   return (
     <main>
       <HeroPage title={data.data.story.content.title} />

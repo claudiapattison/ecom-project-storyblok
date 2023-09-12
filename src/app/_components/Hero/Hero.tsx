@@ -27,7 +27,7 @@ const Hero: FC<{ blok: HeroProps }> = ({ blok }) => (
             {blok.text}
           </p>
           <Button variant="primary" link="/">
-            BUtton
+            Button
           </Button>
         </div>
         <picture className={styles['image-container']}>
