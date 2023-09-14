@@ -12,7 +12,7 @@ export interface CategoryItemProps {
 }
 
 export const CategoryItem: FC<CategoryItemProps> = ({ title, image, link }) => (
-  <Link href={link} className={styles.link}>
+  <Link href={`/${link}`} className={styles.link}>
     <div className={styles.content}>
       <Image
         src={image.filename}

@@ -6,7 +6,7 @@ const nextConfig = {
     appDir: true,
   },
   images: {
-    domains: ['a.storyblok.com'],
+    domains: ['a.storyblok.com', "cdn.shopify.com"],
   },
   webpack(config) {
     config.module.rules.push({

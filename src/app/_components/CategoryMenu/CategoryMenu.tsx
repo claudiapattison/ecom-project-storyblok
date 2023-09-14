@@ -18,23 +18,27 @@ interface CategoryMenuItemProps {
   slug: string
 }
 
-export const CategoryMenu: FC<{ blok: CategoryMenuProps }> = ({ blok }) => (
-  <div className="container">
-    <div className={styles.container}>
-      <ul className={styles.list}>
-        {blok.items?.map((item) => {
-          const image = item.content.teaserImage
-          return (
-            <li key={item.id} className={styles['list-item']}>
-              <CategoryItem
-                title={item.content.title}
-                image={image}
-                link={item.slug}
-              />
-            </li>
-          )
-        })}
-      </ul>
+export const CategoryMenu: FC<{ blok: CategoryMenuProps }> = ({ blok }) => {
+  console.log(blok)
+
+  return (
+    <div className="container">
+      <div className={styles.container}>
+        <ul className={styles.list}>
+          {blok.items?.map((item) => {
+            const image = item.content.teaserImage
+            return (
+              <li key={item.id} className={styles['list-item']}>
+                <CategoryItem
+                  title={item.content.title}
+                  image={image}
+                  link={item.slug}
+                />
+              </li>
+            )
+          })}
+        </ul>
+      </div>
     </div>
-  </div>
-)
+  )
+}

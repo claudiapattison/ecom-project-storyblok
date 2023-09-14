@@ -32,7 +32,7 @@ export const Header: FC<HeaderProps> = ({ navigation }) => (
               </li>
               {navigation?.map((item) => (
                 <li key={item.id}>
-                  <Link className={styles.link} href={item.slug}>
+                  <Link className={styles.link} href={`/${item.slug}`}>
                     {item.name}
                   </Link>
                 </li>

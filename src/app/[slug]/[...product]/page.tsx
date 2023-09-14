@@ -1,4 +1,7 @@
 import Client from 'shopify-buy'
+import { getStoryblokApi, type StoryblokClient } from '@storyblok/react/rsc'
+import StoryblokStory from '@storyblok/react/story'
+import { CategoryMenu } from '@/app/_components/CategoryMenu2/CategoryMenu'
 
 const client = Client.buildClient({
   domain: 'audiophileclaudia.myshopify.com',
@@ -6,21 +9,50 @@ const client = Client.buildClient({
 })
 
 export default async function ProductPage(context: {
-  params: { slug: string }
+  params: { slug: string; product: string }
 }): Promise<JSX.Element> {
-  const products = await client.product.fetchAll()
-  console.log(products)
+  const { data, collections } = await fetchData(context)
+
+  const shopifyApi = data.data.story.content.shopifyID
+  // const products = await client.product.fetchAll()
+  const products = await client.product.fetch(shopifyApi)
+
   return (
     <main>
-      <h1>Produt</h1>
+      <h1>{data.data.story.content.title}</h1>
+      <p>this is {products.variants[0].price.amount}</p>
+      <p> {products.description}</p>
+      <p>Collections: {products.collections}</p>
 
-      <ul>
-        {products.map((product) => (
-          <li>
-            <h2>{product.title}</h2>
-          </li>
-        ))}
-      </ul>
+      <CategoryMenu category={collections} />
+
+      {data.story !== null && <StoryblokStory story={data.data.story} />}
     </main>
   )
+}
+
+// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
+async function fetchData(context: {
+  params: { slug: string; product: string }
+}) {
+  const { slug } = context.params
+  const { product } = context.params
+
+  const storyblokApi: StoryblokClient = getStoryblokApi()
+
+  const data = await storyblokApi.get(
+    `cdn/stories/${slug}/product/${product[1]}`,
+    {
+      version: 'draft',
+      resolve_relations: 'gridCategoryMenu.items'
+    }
+  )
+
+  const collections = await storyblokApi.getAll(`cdn/stories`, {
+    content_type: 'category',
+    version: 'draft',
+    resolve_relations: 'gridCategoryMenu.items'
+  })
+
+  return { data, collections }
 }

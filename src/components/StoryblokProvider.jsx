@@ -17,6 +17,7 @@ storyblokInit({
   components: {
     page: Page,
     category: Page,
+    product: Page,
     hero: Hero,
     contentTextMedia: ContentTextMedia,
     callToAction: CallToAction,

@@ -1,0 +1,47 @@
+@use '/scss/abstracts/mixins/responsive' as responsive;
+@use '/scss/abstracts/variables/variables' as variables;
+
+.container {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  padding-top: 5.5rem;
+}
+
+.link {
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.list-item {
+  margin-bottom: 6.8rem;
+}
+
+
+@include responsive.mq-min(variables.$mq-md) {
+  .container {
+    margin-top: 9.6rem;
+    margin-bottom: 9.6rem;
+  }
+
+  .list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
+  .list-item {
+    margin-bottom: 0;
+  }
+}
+
+@include responsive.mq-min(variables.$mq-xl) {
+  .container {
+    margin-top: 12rem;
+    margin-bottom: 12rem;
+  }
+
+  .list {
+    gap: 3rem;
+  }
+}
+
