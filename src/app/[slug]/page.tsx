@@ -12,6 +12,7 @@ export default async function CategoryPage(context: {
     <main>
       <HeroPage title={data.data.story.content.title} />
       <ProductListing products={products} />
+
       {data.story !== null && <StoryblokStory story={data.data.story} />}
     </main>
   )

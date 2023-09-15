@@ -1,5 +1,4 @@
 import { type FC } from 'react'
-import Image from 'next/image'
 import { type ImageStoryBlokProps } from '../../../../interfaces/common'
 import { ProductListingItem } from '../ProductListingItem/ProductListingItem'
 
@@ -9,6 +8,7 @@ export interface ProductListingProps {
 
 export interface ProductListingItemProps {
   content: {
+    label: string
     title: string
     image: ImageStoryBlokProps
     description: string

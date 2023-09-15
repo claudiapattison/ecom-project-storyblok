@@ -13,6 +13,7 @@
     "@types/node": "20.3.2",
     "@types/react": "18.2.14",
     "@types/react-dom": "18.2.6",
+    "@types/shopify-buy": "^2.17.1",
     "autoprefixer": "^10.4.14",
     "framer-motion": "^10.12.17",
     "next": "13.4.7",

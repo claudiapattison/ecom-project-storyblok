@@ -10,13 +10,6 @@ export interface ProductListingItemProps {
   description: string
   link: string
   image: ImageStoryBlokProps
-  content: {
-    title: string
-    image: ImageStoryBlokProps
-    description: string
-  }
-  id: number
-  full_slug: string
 }
 
 export const ProductListingItem: FC<ProductListingItemProps> = ({
