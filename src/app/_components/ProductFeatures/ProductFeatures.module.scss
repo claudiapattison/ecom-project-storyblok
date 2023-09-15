@@ -1,0 +1,62 @@
+@use '/scss/abstracts/mixins/responsive' as responsive;
+@use '/scss/abstracts/variables/variables' as variables;
+
+.container {
+  margin-top: 8.8rem;
+  margin-bottom: 8.8rem; 
+}
+
+.grid {
+  display: grid;
+  gap: 8.8rem;
+}
+
+.table {
+  tr {
+    padding-bottom: 0.8rem;
+  }
+
+  td:first-of-type {
+    width: 4.5rem;
+    padding-right: 2.4rem;
+    color: var(--c-primary);
+    font-weight: var(--fw-bold);
+  }
+}
+
+@include responsive.mq-max(variables.$mq-md) {
+  .title {
+    font-size: 2.4rem;
+  }
+}
+
+@include responsive.mq-min(variables.$mq-md) {
+  .container {
+    margin-top: 12rem;
+    margin-bottom: 12rem; 
+  }
+
+  .grid {
+    gap: 12.5rem;
+  }
+
+  .box {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@include responsive.mq-min(variables.$mq-lg) {
+  .container {
+    margin-top: 16rem;
+    margin-bottom: 16rem; 
+  }
+
+  .grid {
+    grid-template-columns: 1fr 35rem;
+  }
+
+  .box {
+    display: block;
+  }
+}
