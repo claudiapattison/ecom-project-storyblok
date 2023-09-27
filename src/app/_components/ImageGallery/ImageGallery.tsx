@@ -1,13 +1,16 @@
 import { type FC } from 'react'
-import { type SbBlokData, storyblokEditable } from '@storyblok/react'
-import { type ImageStoryBlokProps } from '../../../../interfaces/common'
+import { type SbBlokData } from '@storyblok/react'
 import Image from 'next/image'
 import styles from './ImageGallery.module.scss'
 
 interface ImageGalleryProps extends SbBlokData {
-  title: string
-  text: string
-  image: ImageStoryBlokProps
+  Images: ImageProps[]
+}
+
+interface ImageProps {
+  id: number
+  filename: string
+  alt: string
 }
 
 export const ImageGallery: FC<{ blok: ImageGalleryProps }> = ({ blok }) => {
@@ -16,7 +19,6 @@ export const ImageGallery: FC<{ blok: ImageGalleryProps }> = ({ blok }) => {
       <div className="container">
         <ul className={styles.grid}>
           {blok.Images?.map((item) => (
-            // eslint-disable-next-line no-underscore-dangle
             <li key={item.id} className={styles.item}>
               <Image
                 src={item.filename}

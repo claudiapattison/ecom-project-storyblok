@@ -37,7 +37,7 @@ export default async function ProductPage(context: {
         inthebox={data.data.story.content.inthebox}
       />
 
-      {data.story !== null && <StoryblokStory story={data.data.story} />}
+      {data.data.story !== null && <StoryblokStory story={data.data.story} />}
 
       <CategoryMenu category={collections} />
     </main>
