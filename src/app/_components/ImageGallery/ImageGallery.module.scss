@@ -1,0 +1,27 @@
+@use '/scss/abstracts/mixins/responsive' as responsive;
+@use '/scss/abstracts/variables/variables' as variables;
+
+.grid {
+  display: grid; 
+  grid-auto-flow: column; 
+  grid-auto-rows: 1fr;
+  grid-template: 
+    "content bigimage" 1fr ". bigimage" 1fr / 1fr 1fr; 
+  gap: 3rem; 
+
+  li:nth-child(2) {
+    grid-area: bigimage;
+    height: 100%;
+    aspect-ratio: inherit;
+  }
+}
+
+.item {
+  position: relative;
+  aspect-ratio: 89/56;
+  overflow: hidden;
+}
+
+.image {
+  object-fit: cover;
+}
