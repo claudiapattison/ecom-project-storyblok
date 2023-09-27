@@ -17,13 +17,15 @@ export const ContentTextMedia: FC<{ blok: ContentTextMediaProps }> = ({
     <div className="container">
       <div className={styles.grid}>
         <div className={styles['image-container']}>
-          <Image
-            src={blok.image.filename}
-            alt={blok.image.alt}
-            fill
-            sizes="(max-width: 1200px) 100vw"
-            className={styles.image}
-          />
+          {blok.image && blok.image.filename && (
+            <Image
+              src={blok.image.filename}
+              alt={blok.image.alt}
+              fill
+              sizes="(max-width: 1200px) 100vw"
+              className={styles.image}
+            />
+          )}
         </div>
         <div className={styles.content}>
           <h2 {...storyblokEditable(blok)} className={styles.title}>
