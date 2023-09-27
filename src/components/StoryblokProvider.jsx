@@ -11,6 +11,7 @@ import { CallToAction } from '@/app/_components/CallToAction/CallToAction';
 import { CallToActionGrid } from '@/app/_components/CallToActionGrid/CallToActionGrid';
 import { CategoryMenu } from '@/app/_components/CategoryMenu/CategoryMenu';
 import { ImageGallery } from '../app/_components/ImageGallery/ImageGallery';
+import { RelatedProducts } from '@/app/_components/RelatedProducts/RelatedProducts';
 
 
 /** 3. Initialize it as usual */
@@ -26,7 +27,8 @@ storyblokInit({
     callToAction: CallToAction,
     gridCallToAction: CallToActionGrid,
     gridCategoryMenu: CategoryMenu,
-    imageGallery: ImageGallery
+    imageGallery: ImageGallery,
+    relatedProducts: RelatedProducts
   },
 })
 

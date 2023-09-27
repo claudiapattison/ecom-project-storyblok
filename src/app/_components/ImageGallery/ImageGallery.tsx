@@ -11,7 +11,6 @@ interface ImageGalleryProps extends SbBlokData {
 }
 
 export const ImageGallery: FC<{ blok: ImageGalleryProps }> = ({ blok }) => {
-  console.log(blok.Images)
   return (
     <div className="wrapper">
       <div className="container">

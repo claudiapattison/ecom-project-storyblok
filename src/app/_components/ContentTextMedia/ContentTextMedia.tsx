@@ -13,7 +13,7 @@ interface ContentTextMediaProps extends SbBlokData {
 export const ContentTextMedia: FC<{ blok: ContentTextMediaProps }> = ({
   blok
 }) => (
-  <div className="wrapper">
+  <section className="wrapper">
     <div className="container">
       <div className={styles.grid}>
         <div className={styles['image-container']}>
@@ -35,5 +35,5 @@ export const ContentTextMedia: FC<{ blok: ContentTextMediaProps }> = ({
         </div>
       </div>
     </div>
-  </div>
+  </section>
 )
