@@ -1,14 +1,13 @@
 'use client'
 
 import { type FC } from 'react'
-import { renderRichText } from '@storyblok/react'
-import { type SbBlokData } from '@storyblok/react/rsc'
 import styles from './ProductFeatures.module.scss'
 import { render } from 'storyblok-rich-text-react-renderer'
+import { type SbBlokData, storyblokEditable } from '@storyblok/react'
 
 interface ProductFeaturesProps extends SbBlokData {
-  features: string
-  inthebox?: TableData
+  content: string
+  table?: TableData
 }
 
 interface TableCell {
@@ -26,9 +25,8 @@ interface TableData {
   id: number
 }
 
-export const ProductFeatures: FC<ProductFeaturesProps> = ({
-  features,
-  inthebox
+export const ProductFeatures: FC<{ blok: ProductFeaturesProps }> = ({
+  blok
 }) => {
   return (
     <section className={styles.container}>
@@ -36,9 +34,9 @@ export const ProductFeatures: FC<ProductFeaturesProps> = ({
         <div className={styles.grid}>
           <div>
             <h3 className={styles.title}>Features</h3>
-            <div>{render(features)}</div>
+            <div {...storyblokEditable(blok)}>{render(blok.content)}</div>
           </div>
-          {inthebox != null && (
+          {blok.table != null && (
             <div>
               <div className={styles.box}>
                 <h3 className={styles.title}>IN THE BOX</h3>
@@ -50,10 +48,12 @@ export const ProductFeatures: FC<ProductFeaturesProps> = ({
                     </tr>
                   </thead>
                   <tbody>
-                    {inthebox.tbody.map((tr) => (
+                    {blok.table.tbody.map((tr) => (
                       <tr key={tr._uid}>
                         {tr.body.map((td) => (
-                          <td key={td._uid}>{td.value}</td>
+                          <td key={td._uid} {...storyblokEditable(blok)}>
+                            {td.value}
+                          </td>
                         ))}
                       </tr>
                     ))}

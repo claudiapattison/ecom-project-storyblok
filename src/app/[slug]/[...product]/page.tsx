@@ -31,14 +31,7 @@ export default async function ProductPage(context: {
       <h1>{data.data.story.content.title}</h1>
       <p>this is {products.variants[0].price.amount}</p>
       <p> {products.description}</p>
-
-      <ProductFeatures
-        features={data.data.story.content.features}
-        inthebox={data.data.story.content.inthebox}
-      />
-
       {data.data.story !== null && <StoryblokStory story={data.data.story} />}
-
       <CategoryMenu category={collections} />
     </main>
   )
