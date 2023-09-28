@@ -1,6 +1,32 @@
 @use '/scss/abstracts/mixins/responsive' as responsive;
 @use '/scss/abstracts/variables/variables' as variables;
 
+.title {
+  margin-bottom: 6.4rem;
+  font-size: 3.2rem;
+  line-height: 3.6rem;
+  text-align: center;
+}
+
+.image-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 4rem;
+  border-radius: 0.8rem;
+  background-color: var(--c-grey);
+  aspect-ratio: 350 / 318;
+}
+
+.item {
+  text-align: center;
+}
+
+.item-title {
+  font-size: 2.2rem;
+  font-weight: var(--fw-bold);
+  line-height: 3.3rem;
+}
 
 @include responsive.mq-min(variables.$mq-xl) {
   .grid {

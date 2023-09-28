@@ -57,14 +57,14 @@ async function fetchData(context: {
     `cdn/stories/${slug}/product/${product[1]}`,
     {
       version: 'draft',
-      resolve_relations: 'gridCategoryMenu.items'
+      resolve_relations: ['gridCategoryMenu.items', 'relatedProducts.products']
     }
   )
 
   const collections = await storyblokApi.getAll(`cdn/stories`, {
     content_type: 'category',
     version: 'draft',
-    resolve_relations: 'gridCategoryMenu.items'
+    resolve_relations: 'gridCategoryMenu.items, relatedProducts.products'
   })
 
   return { data, collections }
