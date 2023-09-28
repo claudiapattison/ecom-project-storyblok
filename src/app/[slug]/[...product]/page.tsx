@@ -22,7 +22,7 @@ export default async function ProductPage(context: {
 }): Promise<JSX.Element> {
   const { data, collections } = await fetchData(context)
 
-  const shopifyApi = data.data.story.content.shopifyID
+  const shopifyApi = `gid://shopify/Product/${data.data.story.content.shopifyID}`
   // const products = await client.product.fetchAll()
   const products = await client.product.fetch(shopifyApi)
 
