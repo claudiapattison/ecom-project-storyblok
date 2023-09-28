@@ -16,7 +16,7 @@ import { RelatedProducts } from '@/app/_components/RelatedProducts/RelatedProduc
 
 /** 3. Initialize it as usual */
 storyblokInit({
-  accessToken: 'HAhQiRUwaIYEaJfUHWncWgtt',
+  accessToken: process.env.STORYBLOK_API_URL,
   use: [apiPlugin],
   components: {
     page: Page,
