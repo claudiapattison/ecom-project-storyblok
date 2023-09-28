@@ -5,11 +5,17 @@ import styles from './RelatedProducts.module.scss'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Button } from '../Button/Button'
-
 interface RelatedProductsProps extends SbBlokData {
   title: string
-  text: string
-  image: ImageStoryBlokProps
+  products: ProductsProps[]
+}
+interface ProductsProps {
+  id: string
+  content: {
+    title: string
+    image: ImageStoryBlokProps
+  }
+  full_slug: string
 }
 
 export const RelatedProducts: FC<{ blok: RelatedProductsProps }> = ({
