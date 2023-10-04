@@ -2,9 +2,6 @@
 const svgSpriteLoader = require('svg-sprite-loader');
 
 const nextConfig = {
-  experimental: {
-    appDir: true,
-  },
   images: {
     domains: ['a.storyblok.com', "cdn.shopify.com"],
   },
