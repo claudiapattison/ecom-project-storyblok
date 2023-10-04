@@ -1,0 +1,25 @@
+@use '/scss/abstracts/mixins/responsive' as responsive;
+@use '/scss/abstracts/variables/variables' as variables;
+
+.container {
+  padding-top: 13rem;
+}
+
+.image-container {
+  position: relative;
+  aspect-ratio: 540 / 560;
+}
+
+.image {
+  object-fit: cover;
+}
+
+
+@include responsive.mq-min(variables.$mq-md) {
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+}

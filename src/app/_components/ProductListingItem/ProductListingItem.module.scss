@@ -13,17 +13,15 @@
 }
 
 .image-container {
-  border-radius: 0.8rem;
   aspect-ratio: 327/352;
-  background-color: var(--c-grey);
 }
 
 .image {
   width: 100%;
-  max-width: 25rem;
   height: 100%;
   margin: 0 auto;
-  object-fit: contain;
+  border-radius: 0.8rem;
+  object-fit: cover;
 }
 
 .label {
@@ -81,10 +79,6 @@
 
   .image-container {
     aspect-ratio: 1/1;
-  }
-
-  .image {
-    max-width: 37rem;
   }
 
   .title {

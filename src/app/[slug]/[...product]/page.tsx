@@ -2,7 +2,7 @@ import Client from 'shopify-buy'
 import { getStoryblokApi, type StoryblokClient } from '@storyblok/react/rsc'
 import StoryblokStory from '@storyblok/react/story'
 import { CategoryMenu } from '@/app/_components/CategoryMenu2/CategoryMenu'
-import { ProductFeatures } from '@/app/_components/ProductFeatures/ProductFeatures'
+import { ProductIntro } from '@/app/_components/ProductIntro/ProductIntro'
 
 const shopifyDomain = process.env.SHOPIFY_STORE_DOMAIN
 const shopifyAccess = process.env.SHOPIFY_STOREFRONT_ACCESS_TOKEN
@@ -28,9 +28,12 @@ export default async function ProductPage(context: {
 
   return (
     <main>
-      <h1>{data.data.story.content.title}</h1>
-      <p>this is {products.variants[0].price.amount}</p>
-      <p> {products.description}</p>
+      <ProductIntro
+        title={data.data.story.content.title}
+        image={data.data.story.content.image}
+        price={products.variants[0].price.amount}
+        description={products.description}
+      />
       {data.data.story !== null && <StoryblokStory story={data.data.story} />}
       <CategoryMenu category={collections} />
     </main>
