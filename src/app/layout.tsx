@@ -7,7 +7,7 @@ import { Footer } from './_components/Footer/Footer'
 import '../../scss/styles.scss'
 
 storyblokInit({
-  accessToken: 'HAhQiRUwaIYEaJfUHWncWgtt',
+  accessToken: process.env.STORYBLOK_API_URL,
   use: [apiPlugin]
 })
 
