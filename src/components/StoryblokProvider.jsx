@@ -5,7 +5,7 @@ import { storyblokInit, apiPlugin } from '@storyblok/react/rsc'
 /** 2. Import your components */
 import Page from './Page';
 
-import Hero from '../app/_components/Hero/Hero';
+import { Hero } from '../app/_components/Hero/Hero';
 import { ContentTextMedia } from '../app/_components/ContentTextMedia/ContentTextMedia';
 import { CallToAction } from '@/app/_components/CallToAction/CallToAction';
 import { CallToActionGrid } from '@/app/_components/CallToActionGrid/CallToActionGrid';
