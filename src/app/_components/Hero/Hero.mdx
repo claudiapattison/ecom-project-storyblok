@@ -1,0 +1,14 @@
+import { Canvas, ArgsTable, Meta, Story } from "@storybook/blocks";
+import * as HeroStories from './Hero.stories';
+
+import { Hero } from "./Hero";
+
+<Meta of={HeroStories} />
+
+export const Template = (args) => <Hero {...args} />;
+
+# Hero
+
+<Canvas>
+  <Story of={HeroStories.Default} />
+</Canvas>

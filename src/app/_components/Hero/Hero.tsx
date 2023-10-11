@@ -14,7 +14,7 @@ export interface HeroProps extends SbBlokData {
   imageMobile: ImageStoryBlokProps
 }
 
-const Hero: FC<{ blok: HeroProps }> = ({ blok }) => (
+export const Hero: FC<{ blok: HeroProps }> = ({ blok }) => (
   <div className={styles.hero}>
     <div className="container">
       <div className={styles.grid}>
@@ -26,9 +26,6 @@ const Hero: FC<{ blok: HeroProps }> = ({ blok }) => (
           <p {...storyblokEditable(blok)} className={styles.text}>
             {blok.text}
           </p>
-          <Button variant="primary" link="/">
-            Button
-          </Button>
         </div>
         <picture className={styles['image-container']}>
           <source
@@ -48,5 +45,3 @@ const Hero: FC<{ blok: HeroProps }> = ({ blok }) => (
     </div>
   </div>
 )
-
-export default Hero

@@ -4,7 +4,7 @@ import { type SbBlokData, storyblokEditable } from '@storyblok/react'
 import styles from './ContentTextMedia.module.scss'
 import { type ImageStoryBlokProps } from '../../../../interfaces/common'
 
-interface ContentTextMediaProps extends SbBlokData {
+export interface ContentTextMediaProps extends SbBlokData {
   title: string
   text: string
   image: ImageStoryBlokProps

@@ -1,0 +1,28 @@
+import { Canvas, Meta, Story } from "@storybook/blocks";
+import * as ContentTextMediaStories from './ContentTextMedia.stories';
+
+<Meta of={ContentTextMediaStories} />
+
+# Content Text Media
+
+Content text media component supporting a combination of content and media assets.
+
+*   Label – *Optional field*
+
+*   Title – *Optional field*
+
+    *   The title will be set at a H2 level
+
+*   Rich Text Description
+
+    *   Content support limited to bold, italic, paragraph styling using the Richtext Component
+
+*   Button – *Optional field*
+
+*   Image or Video Configuration – The CTM requires either an image or video
+
+*   Reversed - position the image/video to the left.
+
+<Canvas>
+  <Story of={ContentTextMediaStories.Default} />
+</Canvas>
