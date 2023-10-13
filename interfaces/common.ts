@@ -20,3 +20,7 @@ export interface ImageStoryBlokProps {
   filename: string;
   alt: string;
 }
+
+export interface LinkStoryBlokProps {
+  cached_url: string;
+}

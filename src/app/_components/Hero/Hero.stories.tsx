@@ -1,5 +1,22 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Hero } from './Hero'
+import { HeroBuilder } from './HeroBuilder'
+import { ImageBuilder } from '../../../utils/Builders/ImageBuilder'
+
+const image = new ImageBuilder()
+  .withFilename('/placeholder/hero-desktop.jpg')
+  .withAlt('headphones')
+  .build()
+
+const mock = new HeroBuilder()
+  .withLabel('New products')
+  .withTitle('XX99 MARK II HEADPHONES')
+  .withText(
+    'Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast.'
+  )
+  .withImage(image)
+  .withImageMobile(image)
+  .build()
 
 const meta: Meta<typeof Hero> = {
   title: 'Components/Hero',
@@ -11,21 +28,6 @@ type Story = StoryObj<typeof Hero>
 
 export const Default: Story = {
   args: {
-    blok: {
-      label: 'Mock Label',
-      title: 'Mock Title',
-      text: 'Mock Text',
-      link: '/mock-link',
-
-      image: {
-        filename: '/placeholder/hero-desktop.jpg',
-        alt: 'Mock Image Alt Text'
-      },
-
-      imageMobile: {
-        filename: '/placeholder/hero-desktop.jpg',
-        alt: 'Mock Mobile Image Alt Text'
-      }
-    }
+    blok: mock
   }
 }
