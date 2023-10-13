@@ -4,9 +4,8 @@ import styles from './HeroPage.module.scss'
 export interface HeroPageProps {
   title: string
 }
-
 export const HeroPage: FC<HeroPageProps> = ({ title }) => (
-  <div className={styles.container}>
+  <section className={styles.container}>
     <h1 className={styles.title}>{title}</h1>
-  </div>
+  </section>
 )

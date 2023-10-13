@@ -1,8 +1,8 @@
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom'
-import { Hero } from './Hero'
+import { ContentTextMedia } from './ContentTextMedia'
 
-import { HeroBuilder } from './HeroBuilder'
+import { ContentTextMediaBuilder } from './ContentTextMediaBuilder'
 import { ImageBuilder } from '../../../utils/Builders/ImageBuilder'
 
 const image = new ImageBuilder()
@@ -10,16 +10,14 @@ const image = new ImageBuilder()
   .withAlt('headphones')
   .build()
 
-const mock = new HeroBuilder()
-  .withLabel('New products')
-  .withTitle('XX99 MARK II HEADPHONES')
+const mock = new ContentTextMediaBuilder()
+  .withTitle('Bringing you the best audio gear')
   .withText(
-    'Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast.'
+    'Located at the heart of New York City, Audiophile is the premier store for high end headphones, earphones, speakers, and audio accessories. We have a large showroom and luxury demonstration rooms available for you to browse and experience a wide range of our products. Stop by our store to meet some of the fantastic people who make Audiophile the best place to buy your portable audio equipment.'
   )
   .withImage(image)
-  .withImageMobile(image)
   .build()
-  
+
 jest.mock('@storyblok/react/rsc', () => ({
   getStoryblokApi: () => ({
       get: jest.fn(() => Promise.resolve({ data: { story: { blok: mock } } })),
@@ -27,44 +25,29 @@ jest.mock('@storyblok/react/rsc', () => ({
 }));
 
 
-describe('Hero', () => {
-  it('render label', async () => {
-    render(<Hero blok={mock} />); 
-    const label = screen.getByText(mock.label)
-    expect(label).toBeInTheDocument(); 
-    expect(label.textContent).toBe(mock.label); 
-  });
+describe('ContextTextMedia', () => {
 
-  it('render heading', async () => {
-    render(<Hero blok={mock} />); 
-    const heading = screen.getByRole("heading", { level: 1 })
+  it('render title', async () => {
+    render(<ContentTextMedia blok={mock} />); 
+    const heading = screen.getByRole("heading", { level: 2 })
     expect(heading).toBeInTheDocument(); 
     expect(heading.textContent).toBe(mock.title); 
   });
 
   it('render text', async () => {
-    render(<Hero blok={mock} />); 
+    render(<ContentTextMedia blok={mock} />); 
     const text = screen.getByText(mock.text)
     expect(text).toBeInTheDocument(); 
     expect(text.textContent).toBe(mock.text); 
   });
-  
-  it('render button', async () => {
-    render(<Hero blok={mock} />); 
-    const link = screen.getByText('See product')
-    expect(link).toBeInTheDocument(); 
-    expect(link).toHaveAttribute('href', mock.link.cached_url);
-  });
 
   it('renders the Image component with the correct props', () => {
-    render(<Hero blok={mock} />); 
-
+    render(<ContentTextMedia blok={mock} />); 
     const image = screen.getByAltText('headphones');
 
     expect(image).toBeInTheDocument();
     expect(image).toHaveAttribute('alt', 'headphones');
     expect(image).toHaveClass('image');
   });
-  
 });
 
