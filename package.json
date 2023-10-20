@@ -9,7 +9,8 @@
     "lint": "next lint",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "test": "jest --watch"
+    "test": "jest --watch",
+    "cypress:open": "cypress open"
   },
   "dependencies": {
     "@storyblok/react": "^2.4.7",
@@ -41,6 +42,8 @@
     "@testing-library/react": "^14.0.0",
     "@typescript-eslint/eslint-plugin": "^6.7.4",
     "@typescript-eslint/parser": "^6.7.4",
+    "cypress": "^13.3.1",
+    "cypress-axe": "^1.5.0",
     "eslint": "^8.50.0",
     "eslint-config-airbnb": "19.0.4",
     "eslint-config-airbnb-typescript": "^17.1.0",

@@ -1,0 +1,39 @@
+import { Canvas, Meta, Story } from "@storybook/blocks";
+import * as ButtonStories from './Button.stories';
+
+<Meta of={ButtonStories} />
+
+# Button
+
+## Primary
+
+<Canvas>
+  <Story of={ButtonStories.Default} />
+</Canvas>
+
+## Secondary
+
+<Canvas>
+  <Story of={ButtonStories.Secondary} />
+</Canvas>
+
+## Types
+
+<Canvas>
+  <Story of={ButtonStories.Submit} />
+</Canvas>
+
+
+## Link
+
+<Canvas>
+  <Story of={ButtonStories.Link} />
+</Canvas>
+
+## Aria Label
+
+<Canvas>
+  <Story of={ButtonStories.Aria} />
+</Canvas>
+
+

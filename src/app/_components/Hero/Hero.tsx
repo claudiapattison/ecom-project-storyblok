@@ -18,7 +18,6 @@ export interface HeroProps extends SbBlokData {
 }
 
 export const Hero: FC<{ blok: HeroProps }> = ({ blok }) => {
-  console.log(blok.link)
   return (
     <div className={styles.hero}>
       <div className="container">
