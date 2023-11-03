@@ -4,12 +4,14 @@ import Image from 'next/image'
 import Link from 'next/link'
 import styles from './CallToAction.module.scss'
 import { Button } from '@/app/_components/Button/Button'
-import { type ImageStoryBlokProps } from '../../../../interfaces/common'
-
-interface CallToActionProps extends SbBlokData {
+import {
+  type ImageStoryBlokProps,
+  LinkStoryBlokProps
+} from '../../../../interfaces/common'
+export interface CallToActionProps extends SbBlokData {
   title: string
   text?: string
-  link: string
+  link: LinkStoryBlokProps
   spilt?: boolean
   image?: ImageStoryBlokProps
   feature?: boolean
@@ -17,7 +19,7 @@ interface CallToActionProps extends SbBlokData {
 
 export const CallToAction: FC<{ blok: CallToActionProps }> = ({ blok }) => (
   <Link
-    href="/"
+    href={blok.link.cached_url}
     className={`${styles.container} ${
       blok.feature ? styles['container--feature'] : ''
     } ${blok.spilt ? styles['container--spilt'] : ''}`}

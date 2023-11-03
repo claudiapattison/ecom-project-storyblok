@@ -2,6 +2,7 @@ import type { Preview } from '@storybook/react'
 import { Manrope } from 'next/font/google'
 import '../scss/styles.scss'
 import React from 'react'
+import StoryblokProvider from '../src/components/StoryblokProvider'
 
 const manrope = Manrope({
   subsets: ['latin'],
@@ -22,7 +23,9 @@ const preview: Preview = {
   decorators: [
     (Story) => (
       <div className={`${manrope.variable}`} style={{ fontFamily: 'Manrope' }}>
-        <Story />
+        <StoryblokProvider>
+          <Story />
+        </StoryblokProvider>
       </div>
     )
   ]

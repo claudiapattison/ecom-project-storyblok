@@ -16,7 +16,7 @@ async function fetchData() {
 
   const response = await storyblokApi.get('cdn/stories/home', {
     version: 'draft',
-    resolve_relations: 'gridCategoryMenu.items, hero.link'
+    resolve_relations: 'gridCategoryMenu.items, hero.link, callToAction.link'
   })
 
   return response
